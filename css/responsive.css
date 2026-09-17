@@ -1,0 +1,330 @@
+/* =========================================================
+   UNIVERSITY FOOTBALL MANAGEMENT
+   responsive.css
+
+   Mobile-first responsive rules
+   ========================================================= */
+
+
+/* =========================================================
+   1. VERY SMALL DEVICES — 320px
+   ========================================================= */
+
+@media (max-width: 359px) {
+
+    section {
+        padding: var(--space-12) var(--space-3);
+    }
+
+    .main-navigation {
+        padding-left: var(--space-3);
+        padding-right: var(--space-3);
+    }
+
+    .site-logo {
+        font-size: var(--font-size-lg);
+    }
+
+    .site-logo img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .hero-section,
+    .page-hero {
+        min-height: 540px;
+
+        padding-top: var(--space-16);
+        padding-bottom: var(--space-16);
+    }
+
+    .hero-content h1,
+    .page-hero-content h1 {
+        font-size: 2.35rem;
+    }
+
+    .hero-description {
+        font-size: var(--font-size-base);
+    }
+
+    .competition-information,
+    .fixture-information {
+        grid-template-columns: 1fr;
+    }
+
+    .competition-information div {
+        text-align: center;
+    }
+
+    .fixture-teams,
+    .result-score {
+        gap: var(--space-2);
+    }
+
+    .fixture-team img,
+    .result-team img {
+        width: 46px;
+        height: 46px;
+    }
+
+    .modal-content {
+        padding: var(--space-5);
+    }
+}
+
+
+/* =========================================================
+   2. SMALL MOBILE — 375px+
+   ========================================================= */
+
+@media (min-width: 375px) {
+
+    .hero-content h1,
+    .page-hero-content h1 {
+        font-size: clamp(2.5rem, 10vw, 4.5rem);
+    }
+
+    .competition-information,
+    .fixture-information {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* =========================================================
+   3. TABLET — 600px+
+   ========================================================= */
+
+@media (min-width: 600px) {
+
+    section {
+        padding: var(--space-20) var(--space-6);
+    }
+
+    .hero-section,
+    .page-hero {
+        min-height: 650px;
+    }
+
+    .hero-actions {
+        flex-direction: row;
+
+        width: auto;
+
+        justify-content: center;
+    }
+
+    .hero-actions .button {
+        min-width: 180px;
+    }
+
+    .overview-statistics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .competition-list,
+    .fixture-list,
+    .result-list,
+    .player-list,
+    .news-list,
+    .benefits-list,
+    .management-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .competition-controls {
+        grid-template-columns: 2fr 1fr 1fr;
+        align-items: end;
+    }
+
+    .footer-content {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+
+/* =========================================================
+   4. TABLET — 768px+
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+    .section-header h2 {
+        font-size: var(--font-size-4xl);
+    }
+
+    .competition-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .management-options {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .modal-content {
+        padding: var(--space-8);
+    }
+
+    .footer-content {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+
+/* =========================================================
+   5. DESKTOP — 900px+
+   ========================================================= */
+
+@media (min-width: 900px) {
+
+    .main-navigation {
+        padding-right: var(--space-6);
+        padding-left: var(--space-6);
+    }
+
+    .navigation-toggle {
+        display: none;
+    }
+
+    .navigation-menu {
+        position: static;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: var(--space-1);
+
+        padding: 0;
+
+        background: transparent;
+
+        border: 0;
+
+        border-radius: 0;
+
+        box-shadow: none;
+    }
+
+    .navigation-menu a {
+        padding: var(--space-2) var(--space-3);
+    }
+
+    .navigation-cta {
+        display: inline-flex;
+    }
+
+    .hero-content h1,
+    .page-hero-content h1 {
+        font-size: 4.5rem;
+    }
+
+    .overview-statistics {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .competition-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fixture-list,
+    .result-list,
+    .player-list,
+    .news-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .benefits-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+
+/* =========================================================
+   6. 1025px+
+   ========================================================= */
+
+@media (min-width: 1025px) {
+
+    section {
+        padding-top: var(--space-20);
+        padding-bottom: var(--space-20);
+    }
+
+    .competition-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .competition-controls {
+        width: min(100%, var(--container-width));
+    }
+
+    .management-options {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+
+/* =========================================================
+   7. LARGE DESKTOP — 1200px+
+   ========================================================= */
+
+@media (min-width: 1200px) {
+
+    section {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .main-navigation {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .hero-section,
+    .page-hero {
+        min-height: 700px;
+    }
+
+    .hero-content h1,
+    .page-hero-content h1 {
+        font-size: 5rem;
+    }
+}
+
+
+/* =========================================================
+   8. VERY LARGE DESKTOP — 1440px+
+   ========================================================= */
+
+@media (min-width: 1440px) {
+
+    .hero-section,
+    .page-hero {
+        min-height: 720px;
+    }
+
+    .section-header {
+        margin-bottom: var(--space-12);
+    }
+
+    .competition-list,
+    .fixture-list,
+    .result-list,
+    .player-list,
+    .news-list,
+    .benefits-list,
+    .management-options,
+    .overview-statistics {
+        width: min(100%, var(--container-width));
+    }
+}

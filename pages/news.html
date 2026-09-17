@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>News | University Football Management</title>
+    <meta name="description" content="Read the latest university football news, competition updates, match reports, team announcements, and tournament stories.">
+    <meta name="keywords" content="university football news, football match reports, university sports news, UFM news, football competition updates">
+    <meta name="author" content="University Football Management">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Canonical URL: replace with your production domain before deployment -->
+    <link rel="canonical" href="https://example.com/pages/news.html">
+
+    <!-- Open Graph SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="News | University Football Management">
+    <meta property="og:description" content="Read the latest university football news, competition updates, match reports, team announcements, and tournament stories.">
+    <meta property="og:site_name" content="University Football Management">
+    <meta property="og:url" content="https://example.com/pages/news.html">
+
+    <!-- Twitter/X SEO -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="News | University Football Management">
+    <meta name="twitter:description" content="Read the latest university football news, competition updates, match reports, team announcements, and tournament stories.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <!-- JavaScript: loaded once -->
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+      <header class="site-header">
+
+        <nav class="main-navigation" aria-label="Primary navigation">
+
+            <a class="site-logo" href="index.html" aria-label="University Football Management Home">
+                <img src="../images/img1.jpeg"
+                     alt="University Football Management logo">
+                <span>UFM</span>
+            </a>
+
+            <button class="navigation-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="primary-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+
+            <ul class="navigation-menu" id="primary-menu">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="competitions.html">Competitions</a>
+                </li>
+
+                <li>
+                    <a href="teams.html">Teams</a>
+                </li>
+
+                <li>
+                    <a href="players.html">Players</a>
+                </li>
+
+                <li>
+                    <a href="fixtures.html">Fixtures</a>
+                </li>
+
+                <li>
+                    <a href="results.html">Results</a>
+                </li>
+
+                <li>
+                    <a href="standings.html">Standings</a>
+                </li>
+
+                <li>
+                    <a href="news.html">News</a>
+                </li>
+            </ul>
+
+            <a class="navigation-cta" href="dashboard/index.html">
+                Manage Competition
+            </a>
+
+        </nav>
+
+    </header>
+
+    <main id="main-content">
+        
+<section class="page-hero competitions-hero">
+    <div class="page-hero-content">
+        <p class="hero-label">Football Updates</p>
+        <h1>University Football News</h1>
+        <p class="hero-description">Stay informed with university football news, competition announcements, match reports, team updates, and tournament stories.</p>
+        <div class="hero-actions">
+            <a class="button button-primary" href="#news-list">Read Latest News</a>
+            <a class="button button-secondary" href="competitions.html">Explore Competitions</a>
+        </div>
+    </div>
+</section>
+
+<section class="platform-overview" aria-labelledby="news-overview-heading">
+    <div class="section-header">
+        <p class="section-label">News Centre</p>
+        <h2 id="news-overview-heading">Football News Overview</h2>
+        <p>Follow competition updates, match reports, team announcements, and tournament stories.</p>
+    </div>
+    <div class="overview-statistics">
+        <article class="statistic-card"><span class="statistic-label">Latest Articles</span><strong class="statistic-value">6</strong></article>
+        <article class="statistic-card"><span class="statistic-label">Match Reports</span><strong class="statistic-value">3</strong></article>
+        <article class="statistic-card"><span class="statistic-label">Competition Updates</span><strong class="statistic-value">2</strong></article>
+        <article class="statistic-card"><span class="statistic-label">Team Updates</span><strong class="statistic-value">1</strong></article>
+    </div>
+</section>
+
+<section class="competition-controls-section" aria-labelledby="news-controls-heading">
+    <div class="section-header">
+        <p class="section-label">Find Stories</p>
+        <h2 id="news-controls-heading">Search and Filter News</h2>
+        <p>Find football stories by keyword or category.</p>
+    </div>
+    <div class="competition-controls">
+        <div class="search-group">
+            <label for="news-search">Search news</label>
+            <input type="search" id="news-search" name="news-search"
+                   placeholder="Search news articles..." autocomplete="off"
+                   data-search-input data-search-target="#news-list .news-card">
+        </div>
+        <div class="filter-group">
+            <label for="news-category">News category</label>
+            <select id="news-category" name="news-category">
+                <option value="all">All Categories</option>
+                <option value="match-report">Match Report</option>
+                <option value="competition">Competition</option>
+                <option value="team">Team Update</option>
+            </select>
+        </div>
+    </div>
+</section>
+
+<section class="news-preview" id="news-list" aria-labelledby="news-heading">
+    <div class="section-header">
+        <p class="section-label">Latest Stories</p>
+        <h2 id="news-heading">Latest University Football News</h2>
+        <p>Read the latest updates from competitions, teams, matches, and university football activities.</p>
+    </div>
+
+    <div class="news-list" id="news-list-container">
+        <article class="news-card" data-category="competition">
+            <div class="news-card-content">
+                <p class="section-label">Competition</p>
+                <h3>University Football Premier League Begins New Season</h3>
+                <p>The new university football season brings participating teams together for another competitive campaign.</p>
+                <a class="competition-link" href="#">Read Article</a>
+            </div>
+        </article>
+
+        <article class="news-card" data-category="match-report">
+            <div class="news-card-content">
+                <p class="section-label">Match Report</p>
+                <h3>Computer Science FC Records Important League Victory</h3>
+                <p>A strong performance helped Computer Science FC secure an important result in the university football league.</p>
+                <a class="competition-link" href="#">Read Article</a>
+            </div>
+        </article>
+
+        <article class="news-card" data-category="team">
+            <div class="news-card-content">
+                <p class="section-label">Team Update</p>
+                <h3>Engineering FC Announces Tournament Squad</h3>
+                <p>Engineering FC has confirmed its squad as preparations continue for the upcoming university tournament.</p>
+                <a class="competition-link" href="#">Read Article</a>
+            </div>
+        </article>
+
+        <article class="news-card" data-category="match-report">
+            <div class="news-card-content">
+                <p class="section-label">Match Report</p>
+                <h3>Inter-Faculty Cup Produces Competitive Opening Matches</h3>
+                <p>The opening fixtures of the inter-faculty competition delivered competitive football and important early results.</p>
+                <a class="competition-link" href="#">Read Article</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="competition-management-section" aria-labelledby="news-management-heading">
+    <div class="section-header">
+        <p class="section-label">Content Management</p>
+        <h2 id="news-management-heading">Manage Football News</h2>
+        <p>Keep players, teams, organizers, and supporters informed with timely competition information.</p>
+    </div>
+    <div class="management-options">
+        <article class="benefit-card">
+            <h3>Publish Updates</h3>
+            <p>Create and publish announcements about competitions, fixtures, teams, and football activities.</p>
+            <a class="button button-primary" href="../dashboard/index.html">Open Dashboard</a>
+        </article>
+        <article class="benefit-card">
+            <h3>Report Matches</h3>
+            <p>Turn completed fixtures and results into useful match reports for the football community.</p>
+            <a class="button button-secondary" href="result.html">View Results</a>
+        </article>
+        <article class="benefit-card">
+            <h3>Explore Teams</h3>
+            <p>Review team information and follow updates from participating university football teams.</p>
+            <a class="button button-secondary" href="teams.html">View Teams</a>
+        </article>
+    </div>
+</section>
+
+
+        <section class="final-cta" aria-labelledby="final-cta-heading">
+            <h2 id="final-cta-heading">Manage University Football More Efficiently</h2>
+            <p>Use University Football Management to organize competitions, teams, players, fixtures, results, standings, and football news from one platform.</p>
+            <a class="button button-primary" href="../dashboard/index.html">Open Dashboard</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <a href="../index.html">
+                <img src="../images/img1.jpeg" alt="University Football Management logo">
+                <span>University Football Management</span>
+            </a>
+            <p>A centralized platform for organizing, managing, and monitoring university football competitions.</p>
+        </div>
+
+        <nav class="footer-navigation" aria-label="Footer navigation">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="competitions.html">Competitions</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="fixtures.html">Fixtures</a></li>
+                <li><a href="result.html">Results</a></li>
+                <li><a href="standings.html">Standings</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 University Football Management. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

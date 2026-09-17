@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="View university football match results, scores, completed fixtures, and competition results from one centralized platform."
+    >
+
+    <title>Results | University Football Management</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <!-- JavaScript -->
+    <script src="../js/script.js" defer></script>
+</head>
+
+
+<body>
+
+    <!-- Skip Navigation -->
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+
+    <!-- Site Header -->
+     <header class="site-header">
+
+        <nav class="main-navigation" aria-label="Primary navigation">
+
+            <a class="site-logo" href="index.html" aria-label="University Football Management Home">
+                <img src="../images/img1.jpeg"
+                     alt="University Football Management logo">
+                <span>UFM</span>
+            </a>
+
+            <button class="navigation-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="primary-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+
+            <ul class="navigation-menu" id="primary-menu">
+                <li>
+                    <a href="/index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="/competitions.html">Competitions</a>
+                </li>
+
+                <li>
+                    <a href="teams.html">Teams</a>
+                </li>
+
+                <li>
+                    <a href="players.html">Players</a>
+                </li>
+
+                <li>
+                    <a href="fixtures.html">Fixtures</a>
+                </li>
+
+                <li>
+                    <a href="results.html">Results</a>
+                </li>
+
+                <li>
+                    <a href="standings.html">Standings</a>
+                </li>
+
+                <li>
+                    <a href="news.html">News</a>
+                </li>
+            </ul>
+
+            <a class="navigation-cta" href="dashboard/index.html">
+                Manage Competition
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+
+        <!-- Page Hero -->
+        <section class="page-hero results-hero">
+
+            <div class="page-hero-content">
+
+                <p class="hero-label">
+                    Match Results
+                </p>
+
+                <h1>
+                    University Football Results
+                </h1>
+
+                <p class="hero-description">
+                    View completed university football matches, scores,
+                    winning teams, and competition results from one
+                    centralized platform.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a
+                        class="button button-primary"
+                        href="#results-management"
+                    >
+                        Record Result
+                    </a>
+
+                    <a
+                        class="button button-secondary"
+                        href="#results-list"
+                    >
+                        View Results
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Result Statistics -->
+        <section
+            class="platform-overview"
+            aria-labelledby="results-overview-heading"
+        >
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    Overview
+                </p>
+
+                <h2 id="results-overview-heading">
+                    Results Overview
+                </h2>
+
+                <p>
+                    Monitor completed matches and the latest university
+                    football results.
+                </p>
+
+            </div>
+
+
+            <div class="overview-statistics">
+
+                <article class="statistic-card">
+
+                    <span class="statistic-label">
+                        Completed Matches
+                    </span>
+
+                    <strong
+                        class="statistic-value"
+                        data-statistic="completed-matches"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="statistic-card">
+
+                    <span class="statistic-label">
+                        Matches Today
+                    </span>
+
+                    <strong
+                        class="statistic-value"
+                        data-statistic="matches-today"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="statistic-card">
+
+                    <span class="statistic-label">
+                        Home Wins
+                    </span>
+
+                    <strong
+                        class="statistic-value"
+                        data-statistic="home-wins"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="statistic-card">
+
+                    <span class="statistic-label">
+                        Away Wins
+                    </span>
+
+                    <strong
+                        class="statistic-value"
+                        data-statistic="away-wins"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Search and Filter -->
+        <section
+            class="competition-controls-section"
+            aria-labelledby="results-controls-heading"
+        >
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    Find Results
+                </p>
+
+                <h2 id="results-controls-heading">
+                    Search and Filter
+                </h2>
+
+                <p>
+                    Quickly find match results by team, competition,
+                    or match status.
+                </p>
+
+            </div>
+
+
+            <div class="competition-controls">
+
+                <!-- Search -->
+                <div class="search-group">
+
+                    <label for="result-search">
+                        Search results
+                    </label>
+
+                    <input
+                        type="search"
+                        id="result-search"
+                        name="result-search"
+                        placeholder="Search by team name..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- Competition Filter -->
+                <div class="filter-group">
+
+                    <label for="result-competition">
+                        Competition
+                    </label>
+
+                    <select
+                        id="result-competition"
+                        name="result-competition"
+                    >
+
+                        <option value="all">
+                            All Competitions
+                        </option>
+
+                        <option value="premier-league">
+                            University Football Premier League
+                        </option>
+
+                        <option value="football-cup">
+                            Inter-Faculty Football Cup
+                        </option>
+
+                        <option value="champions-cup">
+                            University Champions Cup
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Result Status -->
+                <div class="filter-group">
+
+                    <label for="result-status">
+                        Result status
+                    </label>
+
+                    <select
+                        id="result-status"
+                        name="result-status"
+                    >
+
+                        <option value="all">
+                            All Results
+                        </option>
+
+                        <option value="home-win">
+                            Home Win
+                        </option>
+
+                        <option value="away-win">
+                            Away Win
+                        </option>
+
+                        <option value="draw">
+                            Draw
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Results List -->
+        <section
+            class="competitions-section"
+            id="results-list"
+            aria-labelledby="results-heading"
+        >
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    Match Results
+                </p>
+
+                <h2 id="results-heading">
+                    Latest Results
+                </h2>
+
+                <p>
+                    Browse completed university football matches and
+                    their final scores.
+                </p>
+
+            </div>
+
+
+            <!-- Dynamic Results Container -->
+            <div
+                class="competition-list"
+                id="result-list"
+            >
+
+
+                <!-- Result Card -->
+                <article
+                    class="competition-card"
+                    data-status="home-win"
+                    data-competition="premier-league"
+                >
+
+                    <header class="competition-card-header">
+
+                        <span class="competition-status">
+                            Home Win
+                        </span>
+
+                        <p class="competition-type">
+                            Premier League
+                        </p>
+
+                    </header>
+
+
+                    <h3>
+                        Computer Science FC 3 - 1 Engineering United
+                    </h3>
+
+                    <p>
+                        Computer Science FC secured a convincing victory
+                        over Engineering United in the university football
+                        league.
+                    </p>
+
+
+                    <dl class="competition-information">
+
+                        <div>
+                            <dt>
+                                Date
+                            </dt>
+
+                            <dd>
+                                01 Sep 2026
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Venue
+                            </dt>
+
+                            <dd>
+                                University Stadium
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Competition
+                            </dt>
+
+                            <dd>
+                                Premier League
+                            </dd>
+                        </div>
+
+                    </dl>
+
+
+                    <a
+                        href="#"
+                        class="competition-link"
+                        aria-label="View result for Computer Science FC versus Engineering United"
+                    >
+                        View Result
+                    </a>
+
+                </article>
+
+
+                <!-- Result Card -->
+                <article
+                    class="competition-card"
+                    data-status="draw"
+                    data-competition="premier-league"
+                >
+
+                    <header class="competition-card-header">
+
+                        <span class="competition-status">
+                            Draw
+                        </span>
+
+                        <p class="competition-type">
+                            Premier League
+                        </p>
+
+                    </header>
+
+
+                    <h3>
+                        Social Sciences FC 2 - 2 Arts United
+                    </h3>
+
+                    <p>
+                        Both teams shared the points after an entertaining
+                        draw in the university football league.
+                    </p>
+
+
+                    <dl class="competition-information">
+
+                        <div>
+                            <dt>
+                                Date
+                            </dt>
+
+                            <dd>
+                                30 Aug 2026
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Venue
+                            </dt>
+
+                            <dd>
+                                Main Sports Field
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Competition
+                            </dt>
+
+                            <dd>
+                                Premier League
+                            </dd>
+                        </div>
+
+                    </dl>
+
+
+                    <a
+                        href="#"
+                        class="competition-link"
+                        aria-label="View result for Social Sciences FC versus Arts United"
+                    >
+                        View Result
+                    </a>
+
+                </article>
+
+
+                <!-- Result Card -->
+                <article
+                    class="competition-card"
+                    data-status="away-win"
+                    data-competition="football-cup"
+                >
+
+                    <header class="competition-card-header">
+
+                        <span class="competition-status">
+                            Away Win
+                        </span>
+
+                        <p class="competition-type">
+                            Football Cup
+                        </p>
+
+                    </header>
+
+
+                    <h3>
+                        Engineering United 0 - 2 Computer Science FC
+                    </h3>
+
+                    <p>
+                        Computer Science FC advanced with a two-goal victory
+                        over Engineering United in the football cup.
+                    </p>
+
+
+                    <dl class="competition-information">
+
+                        <div>
+                            <dt>
+                                Date
+                            </dt>
+
+                            <dd>
+                                27 Aug 2026
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Venue
+                            </dt>
+
+                            <dd>
+                                University Stadium
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Competition
+                            </dt>
+
+                            <dd>
+                                Football Cup
+                            </dd>
+                        </div>
+
+                    </dl>
+
+
+                    <a
+                        href="#"
+                        class="competition-link"
+                        aria-label="View result for Engineering United versus Computer Science FC"
+                    >
+                        View Result
+                    </a>
+
+                </article>
+
+
+                <!-- Result Card -->
+                <article
+                    class="competition-card"
+                    data-status="home-win"
+                    data-competition="champions-cup"
+                >
+
+                    <header class="competition-card-header">
+
+                        <span class="competition-status">
+                            Home Win
+                        </span>
+
+                        <p class="competition-type">
+                            Champions Cup
+                        </p>
+
+                    </header>
+
+
+                    <h3>
+                        Computer Science FC 2 - 0 Arts United
+                    </h3>
+
+                    <p>
+                        Computer Science FC recorded a clean-sheet victory
+                        in the University Champions Cup.
+                    </p>
+
+
+                    <dl class="competition-information">
+
+                        <div>
+                            <dt>
+                                Date
+                            </dt>
+
+                            <dd>
+                                22 Aug 2026
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Venue
+                            </dt>
+
+                            <dd>
+                                Central Sports Complex
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Competition
+                            </dt>
+
+                            <dd>
+                                Champions Cup
+                            </dd>
+                        </div>
+
+                    </dl>
+
+
+                    <a
+                        href="#"
+                        class="competition-link"
+                        aria-label="View result for Computer Science FC versus Arts United"
+                    >
+                        View Result
+                    </a>
+
+                </article>
+
+            </div>
+
+
+            <!-- No Results Message -->
+            <p
+                class="no-results"
+                id="no-result-results"
+                hidden
+            >
+                No match results match your search or filter selection.
+            </p>
+
+        </section>
+
+
+        <!-- Results Management -->
+        <section
+            class="competition-management-section"
+            id="results-management"
+            aria-labelledby="results-management-heading"
+        >
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    Administration
+                </p>
+
+                <h2 id="results-management-heading">
+                    Manage Match Results
+                </h2>
+
+                <p>
+                    Tournament organizers can record completed matches
+                    and maintain accurate football competition results.
+                </p>
+
+            </div>
+
+
+            <div class="management-options">
+
+                <article class="benefit-card">
+
+                    <h3>
+                        Record Result
+                    </h3>
+
+                    <p>
+                        Enter the final score, participating teams,
+                        competition, venue, and match date.
+                    </p>
+
+                    <button
+                        class="button button-primary"
+                        type="button"
+                        data-modal-target="record-result-modal"
+                    >
+                        Record Result
+                    </button>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <h3>
+                        Manage Fixtures
+                    </h3>
+
+                    <p>
+                        View upcoming fixtures and update completed matches
+                        with their final results.
+                    </p>
+
+                    <a
+                        class="button button-secondary"
+                        href="fixtures.html"
+                    >
+                        Manage Fixtures
+                    </a>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <h3>
+                        View Standings
+                    </h3>
+
+                    <p>
+                        Check how completed match results affect team
+                        positions and competition standings.
+                    </p>
+
+                    <a
+                        class="button button-secondary"
+                        href="standings.html"
+                    >
+                        View Standings
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Final Call to Action -->
+        <section
+            class="final-cta"
+            aria-labelledby="result-final-cta-heading"
+        >
+
+            <h2 id="result-final-cta-heading">
+                Keep Every Match Result Organized
+            </h2>
+
+            <p>
+                Record accurate football results and keep teams,
+                competitions, and standings up to date.
+            </p>
+
+            <a
+                class="button button-primary"
+                href="#results-management"
+            >
+                Start Managing Results
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Record Result Modal -->
+    <div
+        class="modal"
+        id="record-result-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="record-result-title"
+        hidden
+    >
+
+        <div
+            class="modal-overlay"
+            data-modal-close
+        ></div>
+
+
+        <section class="modal-content">
+
+            <header class="modal-header">
+
+                <h2 id="record-result-title">
+                    Record Match Result
+                </h2>
+
+                <button
+                    class="modal-close"
+                    type="button"
+                    aria-label="Close modal"
+                    data-modal-close
+                >
+                    ×
+                </button>
+
+            </header>
+
+
+            <form
+                class="competition-form"
+                id="result-form"
+                novalidate
+            >
+
+                <div class="form-group">
+
+                    <label for="result-competition-form">
+                        Competition
+                    </label>
+
+                    <select
+                        id="result-competition-form"
+                        name="result-competition"
+                        required
+                    >
+
+                        <option value="">
+                            Select competition
+                        </option>
+
+                        <option value="premier-league">
+                            University Football Premier League
+                        </option>
+
+                        <option value="football-cup">
+                            Inter-Faculty Football Cup
+                        </option>
+
+                        <option value="champions-cup">
+                            University Champions Cup
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="home-team">
+                        Home Team
+                    </label>
+
+                    <select
+                        id="home-team"
+                        name="home-team"
+                        required
+                    >
+
+                        <option value="">
+                            Select home team
+                        </option>
+
+                        <option value="computer-science">
+                            Computer Science FC
+                        </option>
+
+                        <option value="engineering">
+                            Engineering United
+                        </option>
+
+                        <option value="social-science">
+                            Social Sciences FC
+                        </option>
+
+                        <option value="arts">
+                            Arts United
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="away-team">
+                        Away Team
+                    </label>
+
+                    <select
+                        id="away-team"
+                        name="away-team"
+                        required
+                    >
+
+                        <option value="">
+                            Select away team
+                        </option>
+
+                        <option value="computer-science">
+                            Computer Science FC
+                        </option>
+
+                        <option value="engineering">
+                            Engineering United
+                        </option>
+
+                        <option value="social-science">
+                            Social Sciences FC
+                        </option>
+
+                        <option value="arts">
+                            Arts United
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="home-score">
+                        Home Score
+                    </label>
+
+                    <input
+                        type="number"
+                        id="home-score"
+                        name="home-score"
+                        min="0"
+                        required
+                        placeholder="0"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="away-score">
+                        Away Score
+                    </label>
+
+                    <input
+                        type="number"
+                        id="away-score"
+                        name="away-score"
+                        min="0"
+                        required
+                        placeholder="0"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="result-date">
+                        Match Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="result-date"
+                        name="result-date"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="result-venue">
+                        Venue
+                    </label>
+
+                    <input
+                        type="text"
+                        id="result-venue"
+                        name="result-venue"
+                        required
+                        placeholder="Enter match venue"
+                    >
+
+                </div>
+
+
+                <button
+                    class="button button-primary"
+                    type="submit"
+                >
+                    Save Result
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <a href="../index.html">
+
+                    <img
+                        src="../images/img1.jpeg"
+                        alt="University Football Management logo"
+                    >
+
+                    <span>
+                        University Football Management
+                    </span>
+
+                </a>
+
+                <p>
+                    A centralized platform for organizing, managing,
+                    and monitoring university football competitions.
+                </p>
+
+            </div>
+
+
+            <nav
+                class="footer-navigation"
+                aria-label="Footer navigation"
+            >
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="../index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="competitions.html">
+                            Competitions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="teams.html">
+                            Teams
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="players.html">
+                            Players
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="fixtures.html">
+                            Fixtures
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="results.html">
+                            Results
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="standings.html">
+                            Standings
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="news.html">
+                            News
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 University Football Management.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

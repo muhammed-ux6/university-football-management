@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="View, register, and manage university football teams, team information, competitions, and participating squads."
+    >
+
+    <title>Teams | University Football Management</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <!-- JavaScript -->
+    <script src="../js/script.js" defer></script>
+</head>
+
+
+<body>
+
+    <!-- Skip Navigation -->
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+
+    <!-- Site Header -->
+    <header class="site-header">
+
+        <nav
+            class="main-navigation"
+            aria-label="Primary navigation"
+        >
+
+            <!-- Logo -->
+            <a
+                class="site-logo"
+                href="../index.html"
+                aria-label="University Football Management home"
+            >
+                <img
+                    src="../images/img1.jpeg"
+                    alt="University Football Management logo"
+                >
+
+                <span>UFM</span>
+            </a>
+
+
+            <!-- Mobile Navigation Button -->
+            <button
+                class="navigation-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+            <!-- Navigation Links -->
+            <ul
+                class="navigation-menu"
+                id="primary-navigation"
+            >
+
+                <li>
+                    <a href="../index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="competitions.html">
+                        Competitions
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="teams.html"
+                        aria-current="page"
+                    >
+                        Teams
+                    </a>
+                </li>
+
+                <li>
+                    <a href="players.html">
+                        Players
+                    </a>
+                </li>
+
+                <li>
+                    <a href="fixtures.html">
+                        Fixtures
+                    </a>
+                </li>
+
+                <li>
+                    <a href="results.html">
+                        Results
+                    </a>
+                </li>
+
+                <li>
+                    <a href="standings.html">
+                        Standings
+                    </a>
+                </li>
+
+                <li>
+                    <a href="news.html">
+                        News
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <!-- Navigation CTA -->
+            <a
+                class="navigation-cta"
+                href="#team-management"
+            >
+                Manage Teams
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+
+        <!-- Page Hero -->
+        <section class="page-hero teams-hero">
+
+            <div class="page-hero-content">
+
+                <p class="hero-label">
+                    Team Management
+                </p>
+
+                <h1>
+                    University Football Teams
+                </h1>
+
+                <p class="hero-description">
+                    Register, organize, monitor, and manage university
+                    football teams from one centralized platform.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a
+                        class="button button-primary"
+                        href="#team-management"
+                    >
+                        Register Team
+                    </a>
+
+                    <a
+                        class="button button-secondary"
+                        href="#teams-list"
+                    >
+                        View Teams
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Team Statistics -->
+        <section
+            class="platform-overview"
+            aria-labelledby="team-overview-heading"
+        >
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    Overview
+                </p>
+
+                <h2 id="team-overview-heading">
+                    Team Overview
+                </h2>
+
+                <p>
+                    Monitor registered university football teams and their
+                    participation across competitions.
+                </p>
+
+            </div>
+
+
+            <div class="overview-statistics">
+
+                <article class="statistic-card">
+
+                    <span class="statistic-label">
+                        Registered Teams
+                    </span>
+
+                    <strong
+                        class="statistic-value"
+                        data-statistic="registered-teams"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="statistic-card">
+
+                    <span class="statistic-label">
+                        Active Teams
+                    </span>
+
+                    <strong
+                        class="statistic-value"
+                        data-statistic="active-teams"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="statistic-card">
+
+                    <span class="statistic-label">
+                        Participating Teams
+                    </span>
+
+                    <strong
+                        class="statistic-value"
+                        data-statistic="participating-teams"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="statistic-card">
+
+                    <span class="statistic-label">
+                        Total Players
+                    </span>
+
+                    <strong
+                        class="statistic-value"
+                        data-statistic="team-players"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Search and Filter -->
+        <section
+            class="competition-controls-section"
+            aria-labelledby="team-controls-heading"
+        >
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    Find Teams
+                </p>
+
+                <h2 id="team-controls-heading">
+                    Search and Filter
+                </h2>
+
+                <p>
+                    Quickly find teams by name, faculty, or participation
+                    status.
+                </p>
+
+            </div>
+
+
+            <div class="competition-controls">
+
+                <!-- Search -->
+                <div class="search-group">
+
+                    <label for="team-search">
+                        Search teams
+                    </label>
+
+                    <input
+                        type="search"
+                        id="team-search"
+                        name="team-search"
+                        placeholder="Search by team name..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- Status Filter -->
+                <div class="filter-group">
+
+                    <label for="team-status">
+                        Team status
+                    </label>
+
+                    <select
+                        id="team-status"
+                        name="team-status"
+                    >
+
+                        <option value="all">
+                            All Teams
+                        </option>
+
+                        <option value="active">
+                            Active
+                        </option>
+
+                        <option value="inactive">
+                            Inactive
+                        </option>
+
+                        <option value="registered">
+                            Registered
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Faculty Filter -->
+                <div class="filter-group">
+
+                    <label for="team-faculty">
+                        Faculty
+                    </label>
+
+                    <select
+                        id="team-faculty"
+                        name="team-faculty"
+                    >
+
+                        <option value="all">
+                            All Faculties
+                        </option>
+
+                        <option value="science">
+                            Faculty of Science
+                        </option>
+
+                        <option value="engineering">
+                            Faculty of Engineering
+                        </option>
+
+                        <option value="social-science">
+                            Faculty of Social Sciences
+                        </option>
+
+                        <option value="arts">
+                            Faculty of Arts
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Teams List -->
+        <section
+            class="competitions-section"
+            id="teams-list"
+            aria-labelledby="teams-heading"
+        >
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    All Teams
+                </p>
+
+                <h2 id="teams-heading">
+                    Registered Football Teams
+                </h2>
+
+                <p>
+                    Browse university football teams registered on the
+                    platform.
+                </p>
+
+            </div>
+
+
+            <!-- Dynamic Team Container -->
+            <div
+                class="competition-list"
+                id="team-list"
+            >
+
+
+                <!-- Team Card -->
+                <article
+                    class="competition-card"
+                    data-status="active"
+                    data-faculty="science"
+                >
+
+                    <header class="competition-card-header">
+
+                        <span class="competition-status">
+                            Active
+                        </span>
+
+                        <p class="competition-type">
+                            Faculty of Science
+                        </p>
+
+                    </header>
+
+
+                    <h3>
+                        Computer Science FC
+                    </h3>
+
+                    <p>
+                        The official football team representing the
+                        Department of Computer Science.
+                    </p>
+
+
+                    <dl class="competition-information">
+
+                        <div>
+                            <dt>
+                                Players
+                            </dt>
+
+                            <dd>
+                                22
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Matches
+                            </dt>
+
+                            <dd>
+                                8
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Competition
+                            </dt>
+
+                            <dd>
+                                Premier League
+                            </dd>
+                        </div>
+
+                    </dl>
+
+
+                    <a
+                        href="#"
+                        class="competition-link"
+                        aria-label="View Computer Science FC"
+                    >
+                        View Team
+                    </a>
+
+                </article>
+
+
+                <!-- Team Card -->
+                <article
+                    class="competition-card"
+                    data-status="active"
+                    data-faculty="engineering"
+                >
+
+                    <header class="competition-card-header">
+
+                        <span class="competition-status">
+                            Active
+                        </span>
+
+                        <p class="competition-type">
+                            Faculty of Engineering
+                        </p>
+
+                    </header>
+
+
+                    <h3>
+                        Engineering United
+                    </h3>
+
+                    <p>
+                        A competitive university football team representing
+                        the Faculty of Engineering.
+                    </p>
+
+
+                    <dl class="competition-information">
+
+                        <div>
+                            <dt>
+                                Players
+                            </dt>
+
+                            <dd>
+                                24
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Matches
+                            </dt>
+
+                            <dd>
+                                9
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Competition
+                            </dt>
+
+                            <dd>
+                                Premier League
+                            </dd>
+                        </div>
+
+                    </dl>
+
+
+                    <a
+                        href="#"
+                        class="competition-link"
+                        aria-label="View Engineering United"
+                    >
+                        View Team
+                    </a>
+
+                </article>
+
+
+                <!-- Team Card -->
+                <article
+                    class="competition-card"
+                    data-status="registered"
+                    data-faculty="social-science"
+                >
+
+                    <header class="competition-card-header">
+
+                        <span class="competition-status">
+                            Registered
+                        </span>
+
+                        <p class="competition-type">
+                            Faculty of Social Sciences
+                        </p>
+
+                    </header>
+
+
+                    <h3>
+                        Social Sciences FC
+                    </h3>
+
+                    <p>
+                        A university football team representing students
+                        from the Faculty of Social Sciences.
+                    </p>
+
+
+                    <dl class="competition-information">
+
+                        <div>
+                            <dt>
+                                Players
+                            </dt>
+
+                            <dd>
+                                20
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Matches
+                            </dt>
+
+                            <dd>
+                                0
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Competition
+                            </dt>
+
+                            <dd>
+                                Football Cup
+                            </dd>
+                        </div>
+
+                    </dl>
+
+
+                    <a
+                        href="#"
+                        class="competition-link"
+                        aria-label="View Social Sciences FC"
+                    >
+                        View Team
+                    </a>
+
+                </article>
+
+
+                <!-- Team Card -->
+                <article
+                    class="competition-card"
+                    data-status="inactive"
+                    data-faculty="arts"
+                >
+
+                    <header class="competition-card-header">
+
+                        <span class="competition-status">
+                            Inactive
+                        </span>
+
+                        <p class="competition-type">
+                            Faculty of Arts
+                        </p>
+
+                    </header>
+
+
+                    <h3>
+                        Arts United
+                    </h3>
+
+                    <p>
+                        A university football team representing the Faculty
+                        of Arts.
+                    </p>
+
+
+                    <dl class="competition-information">
+
+                        <div>
+                            <dt>
+                                Players
+                            </dt>
+
+                            <dd>
+                                18
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Matches
+                            </dt>
+
+                            <dd>
+                                0
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Competition
+                            </dt>
+
+                            <dd>
+                                —
+                            </dd>
+                        </div>
+
+                    </dl>
+
+
+                    <a
+                        href="#"
+                        class="competition-link"
+                        aria-label="View Arts United"
+                    >
+                        View Team
+                    </a>
+
+                </article>
+
+            </div>
+
+
+            <!-- No Results Message -->
+            <p
+                class="no-results"
+                id="no-team-results"
+                hidden
+            >
+                No teams match your search or filter selection.
+            </p>
+
+        </section>
+
+
+        <!-- Team Management -->
+        <section
+            class="competition-management-section"
+            id="team-management"
+            aria-labelledby="team-management-heading"
+        >
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    Administration
+                </p>
+
+                <h2 id="team-management-heading">
+                    Manage Football Teams
+                </h2>
+
+                <p>
+                    Tournament organizers can register and manage
+                    university football teams from one platform.
+                </p>
+
+            </div>
+
+
+            <div class="management-options">
+
+                <article class="benefit-card">
+
+                    <h3>
+                        Register Team
+                    </h3>
+
+                    <p>
+                        Add a new university football team and provide
+                        important information about the squad.
+                    </p>
+
+                    <button
+                        class="button button-primary"
+                        type="button"
+                        data-modal-target="register-team-modal"
+                    >
+                        Register Team
+                    </button>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <h3>
+                        Manage Players
+                    </h3>
+
+                    <p>
+                        Register players and organize squad information
+                        for participating football teams.
+                    </p>
+
+                    <a
+                        class="button button-secondary"
+                        href="players.html"
+                    >
+                        Manage Players
+                    </a>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <h3>
+                        Manage Fixtures
+                    </h3>
+
+                    <p>
+                        Schedule matches and manage fixtures involving
+                        registered university football teams.
+                    </p>
+
+                    <a
+                        class="button button-secondary"
+                        href="fixtures.html"
+                    >
+                        Manage Fixtures
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Final Call to Action -->
+        <section
+            class="final-cta"
+            aria-labelledby="team-final-cta-heading"
+        >
+
+            <h2 id="team-final-cta-heading">
+                Ready to Register Your Team?
+            </h2>
+
+            <p>
+                Organize university football teams and manage their
+                participation through one centralized platform.
+            </p>
+
+            <a
+                class="button button-primary"
+                href="#team-management"
+            >
+                Start Managing Teams
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Register Team Modal -->
+    <div
+        class="modal"
+        id="register-team-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="register-team-title"
+        hidden
+    >
+
+        <div
+            class="modal-overlay"
+            data-modal-close
+        ></div>
+
+
+        <section class="modal-content">
+
+            <header class="modal-header">
+
+                <h2 id="register-team-title">
+                    Register Football Team
+                </h2>
+
+                <button
+                    class="modal-close"
+                    type="button"
+                    aria-label="Close modal"
+                    data-modal-close
+                >
+                    ×
+                </button>
+
+            </header>
+
+
+            <form
+                class="competition-form"
+                id="team-form"
+                novalidate
+            >
+
+                <div class="form-group">
+
+                    <label for="team-name">
+                        Team Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="team-name"
+                        name="team-name"
+                        required
+                        placeholder="Enter team name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="team-faculty-form">
+                        Faculty
+                    </label>
+
+                    <select
+                        id="team-faculty-form"
+                        name="team-faculty"
+                        required
+                    >
+
+                        <option value="">
+                            Select faculty
+                        </option>
+
+                        <option value="science">
+                            Faculty of Science
+                        </option>
+
+                        <option value="engineering">
+                            Faculty of Engineering
+                        </option>
+
+                        <option value="social-science">
+                            Faculty of Social Sciences
+                        </option>
+
+                        <option value="arts">
+                            Faculty of Arts
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="team-captain">
+                        Team Captain
+                    </label>
+
+                    <input
+                        type="text"
+                        id="team-captain"
+                        name="team-captain"
+                        required
+                        placeholder="Enter captain name"
+                    >
+
+                </div>
+
+
+                <button
+                    class="button button-primary"
+                    type="submit"
+                >
+                    Register Team
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <a href="../index.html">
+
+                    <img
+                        src="../images/img1.jpeg"
+                        alt="University Football Management logo"
+                    >
+
+                    <span>
+                        University Football Management
+                    </span>
+
+                </a>
+
+                <p>
+                    A centralized platform for organizing, managing,
+                    and monitoring university football competitions.
+                </p>
+
+            </div>
+
+
+            <nav
+                class="footer-navigation"
+                aria-label="Footer navigation"
+            >
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="../index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="competitions.html">
+                            Competitions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="teams.html">
+                            Teams
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="players.html">
+                            Players
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="fixtures.html">
+                            Fixtures
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="result.html">
+                            Results
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="standings.html">
+                            Standings
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="news.html">
+                            News
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 University Football Management.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

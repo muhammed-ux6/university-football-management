@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>University Football Management</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+    <!-- Skip Navigation -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Site Header -->
+    <header class="site-header">
+
+        <nav class="main-navigation" aria-label="Primary navigation">
+
+            <a class="site-logo" href="index.html" aria-label="University Football Management Home">
+                <img src="images/img1.jpeg"
+                     alt="University Football Management logo">
+                <span>UFM</span>
+            </a>
+
+            <button class="navigation-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="primary-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+
+            <ul class="navigation-menu" id="primary-menu">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="pages/competitions.html">Competitions</a>
+                </li>
+
+                <li>
+                    <a href="pages/teams.html">Teams</a>
+                </li>
+
+                <li>
+                    <a href="pages/players.html">Players</a>
+                </li>
+
+                <li>
+                    <a href="pages/fixtures.html">Fixtures</a>
+                </li>
+
+                <li>
+                    <a href="pages/results.html">Results</a>
+                </li>
+
+                <li>
+                    <a href="pages/standings.html">Standings</a>
+                </li>
+
+                <li>
+                    <a href="pages/news.html">News</a>
+                </li>
+            </ul>
+
+            <a class="navigation-cta" href="dashboard/index.html">
+                Manage Competition
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+        <!-- Hero Section -->
+        <section class="hero-section" aria-labelledby="hero-title">
+
+            <div class="hero-content">
+
+                <p class="hero-label">University Football Management</p>
+
+                <h1 id="hero-title">
+                    Manage University Football Smarter
+                </h1>
+
+                <p class="hero-description">
+                    Organize competitions, manage teams, track fixtures,
+                    update results and monitor university football from
+                    one centralized platform.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="button button-primary"
+                       href="pages/competitions.html">
+                        View Competitions
+                    </a>
+
+                    <a class="button button-secondary"
+                       href="pages/fixtures.html">
+                        Explore Fixtures
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Platform Overview -->
+        <section class="platform-overview"
+                 aria-labelledby="overview-title">
+
+            <header class="section-header">
+                <p class="section-label">Platform Overview</p>
+
+                <h2 id="overview-title">
+                    University Football at a Glance
+                </h2>
+
+                <p>
+                    Access important competition information,
+                    team records and match activities from one place.
+                </p>
+            </header>
+
+            <ul class="overview-statistics">
+
+                <li class="statistic-card">
+                    <span class="statistic-label">Active Competitions</span>
+                    <strong class="statistic-value">0</strong>
+                </li>
+
+                <li class="statistic-card">
+                    <span class="statistic-label">Registered Teams</span>
+                    <strong class="statistic-value">0</strong>
+                </li>
+
+                <li class="statistic-card">
+                    <span class="statistic-label">Matches Played</span>
+                    <strong class="statistic-value">0</strong>
+                </li>
+
+                <li class="statistic-card">
+                    <span class="statistic-label">Upcoming Matches</span>
+                    <strong class="statistic-value">0</strong>
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- Active Competitions -->
+        <section class="competitions-preview"
+                 aria-labelledby="competitions-title">
+
+            <header class="section-header">
+
+                <p class="section-label">Competitions</p>
+
+                <h2 id="competitions-title">
+                    Active Competitions
+                </h2>
+
+                <p>
+                    Follow ongoing university football competitions
+                    and monitor their progress.
+                </p>
+
+            </header>
+
+            <div class="competition-list">
+
+                <article class="competition-card">
+
+                    <header class="competition-card-header">
+                        <p class="competition-status">Active</p>
+
+                        <h3>
+                            University Football League
+                        </h3>
+                    </header>
+
+                    <p>
+                        Follow participating teams, fixtures,
+                        results and league standings.
+                    </p>
+
+                    <dl class="competition-information">
+                        <div>
+                            <dt>Teams</dt>
+                            <dd>—</dd>
+                        </div>
+
+                        <div>
+                            <dt>Matches</dt>
+                            <dd>—</dd>
+                        </div>
+
+                        <div>
+                            <dt>Status</dt>
+                            <dd>Active</dd>
+                        </div>
+                    </dl>
+
+                    <a href="pages/competition-details.html">
+                        View Competition
+                    </a>
+
+                </article>
+
+            </div>
+
+            <a class="section-link"
+               href="pages/competitions.html">
+                View All Competitions
+            </a>
+
+        </section>
+
+
+        <!-- Upcoming Fixtures -->
+        <section class="fixtures-preview"
+                 aria-labelledby="fixtures-title">
+
+            <header class="section-header">
+
+                <p class="section-label">Fixtures</p>
+
+                <h2 id="fixtures-title">
+                    Upcoming Matches
+                </h2>
+
+                <p>
+                    Find out when and where the next university
+                    football matches will take place.
+                </p>
+
+            </header>
+
+            <div class="fixture-list">
+
+                <article class="fixture-card">
+
+                    <header class="fixture-card-header">
+                        <p class="fixture-competition">
+                            University Football League
+                        </p>
+
+                        <p class="fixture-status">
+                            Upcoming
+                        </p>
+                    </header>
+
+                    <div class="fixture-teams">
+
+                        <div class="fixture-team">
+                            <img src="images/img4.jpeg"
+                                 alt="Home team logo">
+
+                            <h3>Home Team</h3>
+                        </div>
+
+                        <p class="fixture-versus" aria-label="versus">
+                            VS
+                        </p>
+
+                        <div class="fixture-team">
+                            <img src="images/img7.jpeg"
+                                 alt="Away team logo">
+
+                            <h3>Away Team</h3>
+                        </div>
+
+                    </div>
+
+                    <dl class="fixture-information">
+
+                        <div>
+                            <dt>Date</dt>
+                            <dd>15/10/2026</dd>
+                        </div>
+
+                        <div>
+                            <dt>Time</dt>
+                            <dd>10:00am</dd>
+                        </div>
+
+                        <div>
+                            <dt>Venue</dt>
+                            <dd>School Pitch</dd>
+                        </div>
+
+                    </dl>
+
+                    <a href="pages/match-details.html">
+                        View Match Details
+                    </a>
+
+                </article>
+
+            </div>
+
+            <a class="section-link"
+               href="pages/fixtures.html">
+                View All Fixtures
+            </a>
+
+        </section>
+
+
+        <!-- Latest Results -->
+        <section class="results-preview"
+                 aria-labelledby="results-title">
+
+            <header class="section-header">
+
+                <p class="section-label">Results</p>
+
+                <h2 id="results-title">
+                    Latest Results
+                </h2>
+
+                <p>
+                    Review recently completed university football matches.
+                </p>
+
+            </header>
+
+            <div class="result-list">
+
+                <article class="result-card">
+
+                    <header class="result-card-header">
+                        <p class="result-competition">
+                            University Football League
+                        </p>
+
+                        <p class="result-status">
+                            Full Time
+                        </p>
+                    </header>
+
+                    <div class="result-score">
+
+                        <div class="result-team">
+                            <img src="images/img5.jpeg"
+                                 alt="Home team logo">
+
+                            <h3>Home Team</h3>
+                        </div>
+
+                        <p class="score"
+                           aria-label="Match score">
+                            3 : 2
+                        </p>
+
+                        <div class="result-team">
+                            <img src="images/img6.jpeg"
+                                 alt="Away team logo">
+
+                            <h3>Away Team</h3>
+                        </div>
+
+                    </div>
+
+                    <a href="pages/match-details.html">
+                        View Result
+                    </a>
+
+                </article>
+
+            </div>
+
+            <a class="section-link"
+               href="pages/results.html">
+                View All Results
+            </a>
+
+        </section>
+
+
+        <!-- Standings Preview -->
+        <section class="standings-preview"
+                 aria-labelledby="standings-title">
+
+            <header class="section-header">
+
+                <p class="section-label">Standings</p>
+
+                <h2 id="standings-title">
+                    League Standings
+                </h2>
+
+                <p>
+                    See how teams are performing in the current competition.
+                </p>
+
+            </header>
+
+            <div class="table-container">
+
+                <table class="standings-table">
+
+                    <caption>
+                        University Football League standings
+                    </caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Pos</th>
+                            <th scope="col">Team</th>
+                            <th scope="col">P</th>
+                            <th scope="col">W</th>
+                            <th scope="col">D</th>
+                            <th scope="col">L</th>
+                            <th scope="col">GF</th>
+                            <th scope="col">GA</th>
+                            <th scope="col">GD</th>
+                            <th scope="col">PTS</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>computer Science FC</td>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>14</td>
+                            <td>4</td>
+                            <td>+10</td>
+                            <td>16</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Engineering FC</td>
+                            <td>6</td>
+                            <td>4</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>11</td>
+                            <td>5</td>
+                            <td>+6</td>
+                            <td>13</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Businees Administration FC</td>
+                            <td>6</td>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>9</td>
+                            <td>7</td>
+                            <td>+2</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <a class="section-link"
+               href="pages/standings.html">
+                View Full Standings
+            </a>
+
+        </section>
+
+
+        <!-- Top Players -->
+        <section class="players-preview"
+                 aria-labelledby="players-title">
+
+            <header class="section-header">
+
+                <p class="section-label">Players</p>
+
+                <h2 id="players-title">
+                    Top Performers
+                </h2>
+
+                <p>
+                    Discover players making an impact in  football.
+                </p>
+
+            </header>
+
+            <div class="player-list">
+
+                <article class="player-card">
+
+                    <img src="images/img3.jpeg"
+                         alt="Player profile">
+
+                    <header>
+                        <h3>Legal</h3>
+                        <p>computer-science</p>
+                    </header>
+
+                    <dl class="player-statistics">
+
+                        <div>
+                            <dt>Goals</dt>
+                            <dd>23</dd>
+                        </div>
+
+                        <div>
+                            <dt>Assists</dt>
+                            <dd>10</dd>
+                        </div>
+
+                    </dl>
+
+                    <a href="pages/player-details.html">
+                        View Player
+                    </a>
+
+                </article>
+
+            </div>
+
+            <a class="section-link"
+               href="pages/players.html">
+                View All Players
+            </a>
+
+        </section>
+
+
+        <!-- Latest News -->
+        <section class="news-preview"
+                 aria-labelledby="news-title">
+
+            <header class="section-header">
+
+                <p class="section-label">News & Announcements</p>
+
+                <h2 id="news-title">
+                    Latest Updates
+                </h2>
+
+                <p>
+                    Stay informed about university football competitions,
+                    fixtures and announcements.
+                </p>
+
+            </header>
+
+            <div class="news-list">
+
+                <article class="news-card">
+
+                    <img src="images/img8.jpeg"
+                         alt="University football news">
+
+                    <header>
+                        <p class="news-category">Announcement</p>
+
+                        <h3>
+                            University Football Updates
+                        </h3>
+                    </header>
+
+                    <p>
+                        Latest competition information and tournament
+                        announcements will appear here.
+                    </p>
+
+                    <a href="pages/news.html">
+                        Read More
+                    </a>
+
+                </article>
+
+            </div>
+
+            <a class="section-link"
+               href="pages/news.html">
+                View All News
+            </a>
+
+        </section>
+
+
+        <!-- Platform Benefits -->
+        <section class="benefits-section"
+                 aria-labelledby="benefits-title">
+
+            <header class="section-header">
+
+                <p class="section-label">Why University Football Management</p>
+
+                <h2 id="benefits-title">
+                    Everything You Need to Manage Football
+                </h2>
+            </header>
+
+            <ul class="benefits-list">
+
+                <li class="benefit-card">
+                    <h3>Easy Competition Management</h3>
+                    <p>
+                        Organize university football competitions
+                        from one centralized platform.
+                    </p>
+                </li>
+
+                <li class="benefit-card">
+                    <h3>Accurate Statistics</h3>
+                    <p>
+                        Track team and player performance with
+                        organized competition data.
+                    </p>
+                </li>
+
+                <li class="benefit-card">
+                    <h3>Clear Match Information</h3>
+                    <p>
+                        Keep teams, players and fans informed about
+                        fixtures, results and venues.
+                    </p>
+                </li>
+
+                <li class="benefit-card">
+                    <h3>Centralized Information</h3>
+                    <p>
+                        Keep competitions, teams, players, fixtures
+                        and results in one place.
+                    </p>
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- Final Call To Action -->
+        <section class="final-cta"
+                 aria-labelledby="cta-title">
+
+            <h2 id="cta-title">
+                Ready to Manage Your University Football Competition?
+            </h2>
+
+            <p>
+                Organize your competition, manage teams and keep
+                everyone informed from one platform.
+            </p>
+
+            <a class="button button-primary"
+               href="dashboard/index.html">
+                Start Managing
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Site Footer -->
+     <footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+           <a href="index.html">
+    <img src="images/img1.jpeg"
+         alt="University Football Management logo">
+    <span>University Football Management</span>
+</a>
+            <p>A centralized platform for organizing, managing, and monitoring university football competitions.</p>
+        </div>
+
+        <nav class="footer-navigation" aria-label="Footer navigation">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="competitions.html">Competitions</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="fixtures.html">Fixtures</a></li>
+                <li><a href="result.html">Results</a></li>
+                <li><a href="standings.html">Standings</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 University Football Management. All rights reserved.</p>
+    </div>
+</footer>
+
+
+</body>
+</html>

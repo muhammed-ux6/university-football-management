@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="View and manage university football competitions, tournaments, fixtures, and competition details."
+    >
+
+    <title>Competitions | University Football Management</title>
+
+    <!-- CSS -->
+   <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/responsive.css">
+
+    <!-- JavaScript -->
+   <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Skip Navigation -->
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+
+    <!-- Site Header -->
+    <header class="site-header">
+
+        <nav class="main-navigation" aria-label="Primary navigation">
+
+            <a class="site-logo" href="index.html" aria-label="University Football Management Home">
+                <img src="../images/img1.jpeg"
+                     alt="University Football Management logo">
+                <span>UFM</span>
+            </a>
+
+            <button class="navigation-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="primary-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+
+            <ul class="navigation-menu" id="primary-menu">
+                <li>
+                    <a href="/index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="pages/competitions.html">Competitions</a>
+                </li>
+
+                <li>
+                    <a href="competitions.html">Teams</a>
+                </li>
+
+                <li>
+                    <a href="players.html">Players</a>
+                </li>
+
+                <li>
+                    <a href="fixtures.html">Fixtures</a>
+                </li>
+
+                <li>
+                    <a href="results.html">Results</a>
+                </li>
+
+                <li>
+                    <a href="standings.html">Standings</a>
+                </li>
+
+                <li>
+                    <a href="news.html">News</a>
+                </li>
+            </ul>
+
+            <a class="navigation-cta" href="dashboard/index.html">
+                Manage Competition
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+
+        <!-- Page Hero -->
+        <section class="page-hero competitions-hero">
+
+            <div class="page-hero-content">
+
+                <p class="hero-label">
+                    Competition Management
+                </p>
+
+                <h1>
+                    University Football Competitions
+                </h1>
+
+                <p class="hero-description">
+                    Explore, organize, and manage university football
+                    competitions from one centralized platform.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a
+                        class="button button-primary"
+                        href="#competition-management"
+                    >
+                        Create Competition
+                    </a>
+
+                    <a
+                        class="button button-secondary"
+                        href="#competitions-list"
+                    >
+                        View Competitions
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Competition Statistics -->
+        <section
+            class="platform-overview"
+            aria-labelledby="competition-overview-heading"
+        >
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    Overview
+                </p>
+
+                <h2 id="competition-overview-heading">
+                    Competition Overview
+                </h2>
+
+                <p>
+                    Monitor the current status of university football
+                    competitions and tournament activities.
+                </p>
+
+            </div>
+
+
+            <div class="overview-statistics">
+
+                <article class="statistic-card">
+
+                    <span class="statistic-label">
+                        Active Competitions
+                    </span>
+
+                    <strong
+                        class="statistic-value"
+                        data-statistic="active-competitions"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="statistic-card">
+
+                    <span class="statistic-label">
+                        Upcoming Competitions
+                    </span>
+
+                    <strong
+                        class="statistic-value"
+                        data-statistic="upcoming-competitions"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="statistic-card">
+
+                    <span class="statistic-label">
+                        Completed Competitions
+                    </span>
+
+                    <strong
+                        class="statistic-value"
+                        data-statistic="completed-competitions"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="statistic-card">
+
+                    <span class="statistic-label">
+                        Registered Teams
+                    </span>
+
+                    <strong
+                        class="statistic-value"
+                        data-statistic="registered-teams"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Search and Filter -->
+        <section
+            class="competition-controls-section"
+            aria-labelledby="competition-controls-heading"
+        >
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    Find Competitions
+                </p>
+
+                <h2 id="competition-controls-heading">
+                    Search and Filter
+                </h2>
+
+                <p>
+                    Quickly find competitions by name, category, or status.
+                </p>
+
+            </div>
+
+
+            <div class="competition-controls">
+
+                <!-- Search -->
+                <div class="search-group">
+
+                    <label for="competition-search">
+                        Search competitions
+                    </label>
+
+                    <input
+                        type="search"
+                        id="competition-search"
+                        name="competition-search"
+                        placeholder="Search by competition name..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- Status Filter -->
+                <div class="filter-group">
+
+                    <label for="competition-status">
+                        Competition status
+                    </label>
+
+                    <select
+                        id="competition-status"
+                        name="competition-status"
+                    >
+                        <option value="all">
+                            All Competitions
+                        </option>
+
+                        <option value="active">
+                            Active
+                        </option>
+
+                        <option value="upcoming">
+                            Upcoming
+                        </option>
+
+                        <option value="completed">
+                            Completed
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <!-- Competition Type Filter -->
+                <div class="filter-group">
+
+                    <label for="competition-type">
+                        Competition type
+                    </label>
+
+                    <select
+                        id="competition-type"
+                        name="competition-type"
+                    >
+                        <option value="all">
+                            All Types
+                        </option>
+
+                        <option value="league">
+                            League
+                        </option>
+
+                        <option value="knockout">
+                            Knockout
+                        </option>
+
+                        <option value="tournament">
+                            Tournament
+                        </option>
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Competition List -->
+        <section
+            class="competitions-section"
+            id="competitions-list"
+            aria-labelledby="competitions-heading"
+        >
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    All Competitions
+                </p>
+
+                <h2 id="competitions-heading">
+                    Available Competitions
+                </h2>
+
+                <p>
+                    Browse current, upcoming, and completed university
+                    football competitions.
+                </p>
+
+            </div>
+
+
+            <!-- Dynamic Competition Container -->
+            <div
+                class="competition-list"
+                id="competition-list"
+            >
+
+                <!-- Competition Card -->
+                <article
+                    class="competition-card"
+                    data-status="active"
+                    data-type="league"
+                >
+
+                    <header class="competition-card-header">
+
+                        <span class="competition-status">
+                            Active
+                        </span>
+
+                        <p class="competition-type">
+                            League
+                        </p>
+
+                    </header>
+
+                    <h3>
+                        University Football Premier League
+                    </h3>
+
+                    <p>
+                        A competitive university football league bringing
+                        together teams from different faculties and
+                        departments.
+                    </p>
+
+
+                    <dl class="competition-information">
+
+                        <div>
+                            <dt>
+                                Teams
+                            </dt>
+
+                            <dd>
+                                12
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Matches
+                            </dt>
+
+                            <dd>
+                                66
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Season
+                            </dt>
+
+                            <dd>
+                                2026
+                            </dd>
+                        </div>
+
+                    </dl>
+
+
+                    <a
+                        href="#"
+                        class="competition-link"
+                        aria-label="View University Football Premier League"
+                    >
+                        View Competition
+                    </a>
+
+                </article>
+
+
+                <!-- Competition Card -->
+                <article
+                    class="competition-card"
+                    data-status="upcoming"
+                    data-type="tournament"
+                >
+
+                    <header class="competition-card-header">
+
+                        <span class="competition-status">
+                            Upcoming
+                        </span>
+
+                        <p class="competition-type">
+                            Tournament
+                        </p>
+
+                    </header>
+
+                    <h3>
+                        Inter-Faculty Football Cup
+                    </h3>
+
+                    <p>
+                        A knockout football tournament designed to promote
+                        competition and sportsmanship between faculties.
+                    </p>
+
+
+                    <dl class="competition-information">
+
+                        <div>
+                            <dt>
+                                Teams
+                            </dt>
+
+                            <dd>
+                                16
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Matches
+                            </dt>
+
+                            <dd>
+                                15
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Start Date
+                            </dt>
+
+                            <dd>
+                                Soon
+                            </dd>
+                        </div>
+
+                    </dl>
+
+
+                    <a
+                        href="#"
+                        class="competition-link"
+                        aria-label="View Inter-Faculty Football Cup"
+                    >
+                        View Competition
+                    </a>
+
+                </article>
+
+
+                <!-- Competition Card -->
+                <article
+                    class="competition-card"
+                    data-status="completed"
+                    data-type="knockout"
+                >
+
+                    <header class="competition-card-header">
+
+                        <span class="competition-status">
+                            Completed
+                        </span>
+
+                        <p class="competition-type">
+                            Knockout
+                        </p>
+
+                    </header>
+
+                    <h3>
+                        University Champions Cup
+                    </h3>
+
+                    <p>
+                        A completed knockout competition featuring the top
+                        football teams across the university.
+                    </p>
+
+
+                    <dl class="competition-information">
+
+                        <div>
+                            <dt>
+                                Teams
+                            </dt>
+
+                            <dd>
+                                8
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Matches
+                            </dt>
+
+                            <dd>
+                                7
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Winner
+                            </dt>
+
+                            <dd>
+                                CS FC
+                            </dd>
+                        </div>
+
+                    </dl>
+
+
+                    <a
+                        href="#"
+                        class="competition-link"
+                        aria-label="View University Champions Cup"
+                    >
+                        View Competition
+                    </a>
+
+                </article>
+
+            </div>
+
+
+            <!-- No Results Message -->
+            <p
+                class="no-results"
+                id="no-competition-results"
+                hidden
+            >
+                No competitions match your search or filter selection.
+            </p>
+
+        </section>
+
+
+        <!-- Competition Management -->
+        <section
+            class="competition-management-section"
+            id="competition-management"
+            aria-labelledby="competition-management-heading"
+        >
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    Administration
+                </p>
+
+                <h2 id="competition-management-heading">
+                    Manage a Competition
+                </h2>
+
+                <p>
+                    Tournament organizers can create and manage university
+                    football competitions from one platform.
+                </p>
+
+            </div>
+
+
+            <div class="management-options">
+
+                <article class="benefit-card">
+
+                    <h3>
+                        Create Competition
+                    </h3>
+
+                    <p>
+                        Set up a new football competition and define its
+                        structure, dates, and participating teams.
+                    </p>
+
+                    <button
+                        class="button button-primary"
+                        type="button"
+                        data-modal-target="create-competition-modal"
+                    >
+                        Create Competition
+                    </button>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <h3>
+                        Manage Teams
+                    </h3>
+
+                    <p>
+                        Register participating teams and organize team
+                        information for each competition.
+                    </p>
+
+                    <a
+                        class="button button-secondary"
+                        href="teams.html"
+                    >
+                        Manage Teams
+                    </a>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <h3>
+                        Manage Fixtures
+                    </h3>
+
+                    <p>
+                        Create match schedules and manage fixtures for
+                        active football competitions.
+                    </p>
+
+                    <a
+                        class="button button-secondary"
+                        href="fixtures.html"
+                    >
+                        Manage Fixtures
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Final Call to Action -->
+        <section
+            class="final-cta"
+            aria-labelledby="final-cta-heading"
+        >
+
+            <h2 id="final-cta-heading">
+                Ready to Organize Your Competition?
+            </h2>
+
+            <p>
+                Create and manage university football competitions with a
+                centralized and organized digital platform.
+            </p>
+
+            <a
+                class="button button-primary"
+                href="#competition-management"
+            >
+                Start Managing
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Create Competition Modal -->
+    <div
+        class="modal"
+        id="create-competition-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="create-competition-title"
+        hidden
+    >
+
+        <div class="modal-overlay" data-modal-close></div>
+
+
+        <section class="modal-content">
+
+            <header class="modal-header">
+
+                <h2 id="create-competition-title">
+                    Create Competition
+                </h2>
+
+                <button
+                    class="modal-close"
+                    type="button"
+                    aria-label="Close modal"
+                    data-modal-close
+                >
+                    ×
+                </button>
+
+            </header>
+
+
+            <form
+                class="competition-form"
+                id="competition-form"
+                novalidate
+            >
+
+                <div class="form-group">
+
+                    <label for="competition-name">
+                        Competition Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="competition-name"
+                        name="competition-name"
+                        required
+                        placeholder="Enter competition name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="competition-category">
+                        Competition Type
+                    </label>
+
+                    <select
+                        id="competition-category"
+                        name="competition-category"
+                        required
+                    >
+                        <option value="">
+                            Select competition type
+                        </option>
+
+                        <option value="league">
+                            League
+                        </option>
+
+                        <option value="knockout">
+                            Knockout
+                        </option>
+
+                        <option value="tournament">
+                            Tournament
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="competition-date">
+                        Start Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="competition-date"
+                        name="competition-date"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    class="button button-primary"
+                    type="submit"
+                >
+                    Create Competition
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+
+    <!-- Footer -->
+   <footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <a href="../index.html">
+                <img src="../images/img1.jpeg" alt="University Football Management logo">
+                <span>University Football Management</span>
+            </a>
+            <p>A centralized platform for organizing, managing, and monitoring university football competitions.</p>
+        </div>
+`
+        <nav class="footer-navigation" aria-label="Footer navigation">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="competitions.html">Competitions</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="fixtures.html">Fixtures</a></li>
+                <li><a href="result.html">Results</a></li>
+                <li><a href="standings.html">Standings</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 University Football Management. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

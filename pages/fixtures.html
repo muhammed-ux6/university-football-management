@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fixtures | University Football Management</title>
+    <meta name="description" content="View upcoming university football fixtures, match schedules, venues, kick-off times, and competition details on University Football Management.">
+    <meta name="keywords" content="university football fixtures, football match schedule, university football matches, UFM fixtures, football timetable">
+    <meta name="author" content="University Football Management">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Canonical URL: replace with your production domain before deployment -->
+    <link rel="canonical" href="https://example.com/pages/fixtures.html">
+
+    <!-- Open Graph SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Fixtures | University Football Management">
+    <meta property="og:description" content="View upcoming university football fixtures, match schedules, venues, kick-off times, and competition details on University Football Management.">
+    <meta property="og:site_name" content="University Football Management">
+    <meta property="og:url" content="https://example.com/pages/fixtures.html">
+
+    <!-- Twitter/X SEO -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Fixtures | University Football Management">
+    <meta name="twitter:description" content="View upcoming university football fixtures, match schedules, venues, kick-off times, and competition details on University Football Management.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <!-- JavaScript: loaded once -->
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+   <header class="site-header">
+
+        <nav class="main-navigation" aria-label="Primary navigation">
+
+            <a class="site-logo" href="index.html" aria-label="University Football Management Home">
+                <img src="../images/img1.jpeg"
+                     alt="University Football Management logo">
+                <span>UFM</span>
+            </a>
+
+            <button class="navigation-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="primary-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+
+            <ul class="navigation-menu" id="primary-menu">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="competitions.html">Competitions</a>
+                </li>
+
+                <li>
+                    <a href="teams.html">Teams</a>
+                </li>
+
+                <li>
+                    <a href="players.html">Players</a>
+                </li>
+
+                <li>
+                    <a href="fixtures.html">Fixtures</a>
+                </li>
+
+                <li>
+                    <a href="results.html">Results</a>
+                </li>
+
+                <li>
+                    <a href="standings.html">Standings</a>
+                </li>
+
+                <li>
+                    <a href="news.html">News</a>
+                </li>
+            </ul>
+
+            <a class="navigation-cta" href="dashboard/index.html">
+                Manage Competition
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main id="main-content">
+        
+<section class="page-hero competitions-hero">
+    <div class="page-hero-content">
+        <p class="hero-label">Match Scheduling</p>
+        <h1>University Football Fixtures</h1>
+        <p class="hero-description">View upcoming university football matches, scheduled venues, kick-off times, and competition information from one centralized platform.</p>
+        <div class="hero-actions">
+            <a class="button button-primary" href="#fixtures-list">View Fixtures</a>
+            <a class="button button-secondary" href="../dashboard/index.html">Manage Fixtures</a>
+        </div>
+    </div>
+</section>
+
+<section class="platform-overview" aria-labelledby="fixture-overview-heading">
+    <div class="section-header">
+        <p class="section-label">Overview</p>
+        <h2 id="fixture-overview-heading">Fixture Overview</h2>
+        <p>Monitor upcoming matches and scheduled university football activities.</p>
+    </div>
+    <div class="overview-statistics">
+        <article class="statistic-card"><span class="statistic-label">Upcoming Fixtures</span><strong class="statistic-value" data-statistic="upcoming-fixtures">0</strong></article>
+        <article class="statistic-card"><span class="statistic-label">Today's Matches</span><strong class="statistic-value" data-statistic="today-fixtures">0</strong></article>
+        <article class="statistic-card"><span class="statistic-label">Competitions</span><strong class="statistic-value" data-statistic="fixture-competitions">0</strong></article>
+        <article class="statistic-card"><span class="statistic-label">Scheduled Teams</span><strong class="statistic-value" data-statistic="fixture-teams">0</strong></article>
+    </div>
+</section>
+
+<section class="competition-controls-section" aria-labelledby="fixture-controls-heading">
+    <div class="section-header">
+        <p class="section-label">Find Matches</p>
+        <h2 id="fixture-controls-heading">Search and Filter Fixtures</h2>
+        <p>Find fixtures by team, competition, venue, or match status.</p>
+    </div>
+    <div class="competition-controls">
+        <div class="search-group">
+            <label for="fixture-search">Search fixtures</label>
+            <input type="search" id="fixture-search" name="fixture-search"
+                   placeholder="Search by team, venue, or competition..." autocomplete="off"
+                   data-search-input data-search-target="#fixture-list .fixture-card">
+        </div>
+        <div class="filter-group">
+            <label for="fixture-status">Match status</label>
+            <select id="fixture-status" name="fixture-status" data-filter-target="#fixture-list .fixture-card" data-filter-property="status">
+                <option value="all">All Fixtures</option>
+                <option value="scheduled">Scheduled</option>
+                <option value="postponed">Postponed</option>
+            </select>
+        </div>
+    </div>
+</section>
+
+<section class="fixtures-preview" id="fixtures-list" aria-labelledby="fixtures-heading">
+    <div class="section-header">
+        <p class="section-label">Upcoming Matches</p>
+        <h2 id="fixtures-heading">Latest Fixtures</h2>
+        <p>Upcoming university football matches and scheduled match details.</p>
+    </div>
+
+    <div class="fixture-list" id="fixture-list">
+        <article class="fixture-card" data-status="scheduled">
+            <header class="fixture-card-header">
+                <span class="competition-status">Scheduled</span>
+                <p>University Football Premier League</p>
+            </header>
+            <div class="fixture-teams">
+                <div class="fixture-team"><strong>Computer Science FC</strong><span>Home</span></div>
+                <span class="fixture-vs" aria-hidden="true">VS</span>
+                <div class="fixture-team"><strong>Business Administration FC</strong><span>Away</span></div>
+            </div>
+            <dl class="fixture-information">
+                <div><dt>Date</dt><dd>10 September 2026</dd></div>
+                <div><dt>Time</dt><dd>4:00 PM</dd></div>
+                <div><dt>Venue</dt><dd>University Sports Ground</dd></div>
+            </dl>
+        </article>
+
+        <article class="fixture-card" data-status="scheduled">
+            <header class="fixture-card-header">
+                <span class="competition-status">Scheduled</span>
+                <p>Inter-Faculty Football Cup</p>
+            </header>
+            <div class="fixture-teams">
+                <div class="fixture-team"><strong>Engineering FC</strong><span>Home</span></div>
+                <span class="fixture-vs" aria-hidden="true">VS</span>
+                <div class="fixture-team"><strong>Social Sciences FC</strong><span>Away</span></div>
+            </div>
+            <dl class="fixture-information">
+                <div><dt>Date</dt><dd>12 September 2026</dd></div>
+                <div><dt>Time</dt><dd>2:00 PM</dd></div>
+                <div><dt>Venue</dt><dd>Main Football Pitch</dd></div>
+            </dl>
+        </article>
+
+        <article class="fixture-card" data-status="postponed">
+            <header class="fixture-card-header">
+                <span class="competition-status">Postponed</span>
+                <p>University Football Premier League</p>
+            </header>
+            <div class="fixture-teams">
+                <div class="fixture-team"><strong>Science FC</strong><span>Home</span></div>
+                <span class="fixture-vs" aria-hidden="true">VS</span>
+                <div class="fixture-team"><strong>Arts FC</strong><span>Away</span></div>
+            </div>
+            <dl class="fixture-information">
+                <div><dt>Date</dt><dd>15 September 2026</dd></div>
+                <div><dt>Time</dt><dd>3:00 PM</dd></div>
+                <div><dt>Venue</dt><dd>To Be Confirmed</dd></div>
+            </dl>
+        </article>
+    </div>
+
+    <p class="no-results" id="no-fixture-results" hidden>No fixtures match your search or filter selection.</p>
+</section>
+
+<section class="competition-management-section" aria-labelledby="fixture-management-heading">
+    <div class="section-header">
+        <p class="section-label">Administration</p>
+        <h2 id="fixture-management-heading">Fixture Management</h2>
+        <p>Keep university football schedules accurate, organized, and easy to monitor.</p>
+    </div>
+    <div class="management-options">
+        <article class="benefit-card">
+            <h3>Create Fixture</h3>
+            <p>Schedule a match by selecting the competition, teams, date, time, and venue.</p>
+            <a class="button button-primary" href="../dashboard/index.html">Create Fixture</a>
+        </article>
+        <article class="benefit-card">
+            <h3>Manage Teams</h3>
+            <p>Review participating teams before assigning them to upcoming matches.</p>
+            <a class="button button-secondary" href="teams.html">View Teams</a>
+        </article>
+        <article class="benefit-card">
+            <h3>Check Results</h3>
+            <p>Review completed matches and compare upcoming fixtures with recent outcomes.</p>
+            <a class="button button-secondary" href="result.html">View Results</a>
+        </article>
+    </div>
+</section>
+
+
+        <section class="final-cta" aria-labelledby="final-cta-heading">
+            <h2 id="final-cta-heading">Manage University Football More Efficiently</h2>
+            <p>Use University Football Management to organize competitions, teams, players, fixtures, results, standings, and football news from one platform.</p>
+            <a class="button button-primary" href="../dashboard/index.html">Open Dashboard</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <a href="../index.html">
+                <img src="../images/img1.jpeg" alt="University Football Management logo">
+                <span>University Football Management</span>
+            </a>
+            <p>A centralized platform for organizing, managing, and monitoring university football competitions.</p>
+        </div>
+
+        <nav class="footer-navigation" aria-label="Footer navigation">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="competitions.html">Competitions</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="fixtures.html">Fixtures</a></li>
+                <li><a href="result.html">Results</a></li>
+                <li><a href="standings.html">Standings</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 University Football Management. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

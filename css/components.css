@@ -1,0 +1,554 @@
+/* =========================================================
+   UNIVERSITY FOOTBALL MANAGEMENT
+   components.css
+
+   Reusable UI components
+   ========================================================= */
+
+
+/* =========================================================
+   1. SEARCH & FILTER CONTROLS
+   ========================================================= */
+
+.competition-controls {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: var(--space-5);
+
+    width: min(100%, 1000px);
+
+    margin: 0 auto;
+
+    padding: var(--space-6);
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.search-group,
+.filter-group,
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-group label,
+.filter-group label,
+.form-group label {
+    margin-bottom: var(--space-2);
+}
+
+
+/* =========================================================
+   2. FILTER STATUS
+   ========================================================= */
+
+.competition-controls-section {
+    background: var(--color-surface-muted);
+}
+
+
+/* =========================================================
+   3. NO RESULTS
+   ========================================================= */
+
+.no-results {
+    width: min(100%, 700px);
+
+    margin: var(--space-8) auto 0;
+
+    padding: var(--space-6);
+
+    background: var(--color-surface);
+
+    border: 1px dashed var(--color-border-dark);
+    border-radius: var(--radius-lg);
+
+    color: var(--color-text-secondary);
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   4. COMPETITION MANAGEMENT
+   ========================================================= */
+
+.competition-management-section {
+    background: var(--color-surface-muted);
+}
+
+.management-options {
+    grid-template-columns: 1fr;
+}
+
+
+/* =========================================================
+   5. MODAL
+   ========================================================= */
+
+.modal[hidden] {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 2000;
+
+    display: grid;
+    place-items: center;
+
+    padding: var(--space-4);
+}
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(15, 23, 42, 0.65);
+
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    position: relative;
+    z-index: 1;
+
+    width: min(100%, 560px);
+
+    max-height: calc(100vh - 2rem);
+
+    overflow-y: auto;
+
+    padding: var(--space-6);
+
+    background: var(--color-surface);
+
+    border-radius: var(--radius-xl);
+
+    box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--space-4);
+
+    margin-bottom: var(--space-6);
+
+    padding-bottom: var(--space-4);
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+.modal-header h2 {
+    margin-bottom: 0;
+
+    color: var(--color-primary);
+
+    font-size: var(--font-size-2xl);
+}
+
+.modal-close {
+    display: grid;
+    place-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    background: transparent;
+
+    border: 1px solid var(--color-border-dark);
+    border-radius: var(--radius-md);
+
+    color: var(--color-primary);
+
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    background: var(--color-surface-muted);
+}
+
+
+/* =========================================================
+   6. COMPETITION FORM
+   ========================================================= */
+
+.competition-form {
+    display: grid;
+    gap: var(--space-5);
+}
+
+.competition-form .button {
+    width: 100%;
+}
+
+
+/* =========================================================
+   7. FORM VALIDATION STATES
+   ========================================================= */
+
+input.is-invalid,
+select.is-invalid,
+textarea.is-invalid {
+    border-color: var(--color-danger);
+}
+
+input.is-valid,
+select.is-valid,
+textarea.is-valid {
+    border-color: var(--color-success);
+}
+
+.form-error {
+    margin-top: var(--space-2);
+
+    color: var(--color-danger);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+}
+
+
+/* =========================================================
+   8. STATUS BADGES
+   ========================================================= */
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+
+    width: fit-content;
+
+    padding: var(--space-1) var(--space-3);
+
+    border-radius: 999px;
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+}
+
+.status-active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-upcoming {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-completed {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.status-cancelled {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+
+/* =========================================================
+   9. SEARCH COMPONENT
+   ========================================================= */
+
+.search-wrapper {
+    position: relative;
+}
+
+.search-wrapper input {
+    padding-right: var(--space-12);
+}
+
+
+/* =========================================================
+   10. TABS
+   ========================================================= */
+
+.tabs {
+    display: flex;
+
+    gap: var(--space-2);
+
+    overflow-x: auto;
+
+    padding-bottom: var(--space-2);
+}
+
+.tab-button {
+    flex-shrink: 0;
+
+    min-height: 44px;
+
+    padding: var(--space-3) var(--space-4);
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius-md);
+
+    color: var(--color-text-secondary);
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+}
+
+.tab-button:hover,
+.tab-button.is-active {
+    background: var(--color-secondary);
+    color: #ffffff;
+
+    border-color: var(--color-secondary);
+}
+
+.tab-panel[hidden] {
+    display: none;
+}
+
+
+/* =========================================================
+   11. FAQ
+   ========================================================= */
+
+.faq-list {
+    display: grid;
+    gap: var(--space-4);
+
+    width: min(100%, 850px);
+
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--space-4);
+
+    padding: var(--space-5);
+
+    background: transparent;
+
+    border: 0;
+
+    color: var(--color-primary);
+
+    font-weight: var(--font-weight-semibold);
+
+    text-align: left;
+}
+
+.faq-question:hover {
+    background: var(--color-surface-muted);
+}
+
+.faq-answer {
+    padding: 0 var(--space-5) var(--space-5);
+
+    color: var(--color-text-secondary);
+}
+
+
+/* =========================================================
+   12. ALERTS
+   ========================================================= */
+
+.alert {
+    padding: var(--space-4) var(--space-5);
+
+    border: 1px solid;
+    border-radius: var(--radius-md);
+
+    font-size: var(--font-size-sm);
+}
+
+.alert-success {
+    background: #f0fdf4;
+    border-color: #86efac;
+    color: #166534;
+}
+
+.alert-warning {
+    background: #fffbeb;
+    border-color: #fcd34d;
+    color: #92400e;
+}
+
+.alert-danger {
+    background: #fef2f2;
+    border-color: #fca5a5;
+    color: #991b1b;
+}
+
+.alert-info {
+    background: #eff6ff;
+    border-color: #93c5fd;
+    color: #1e40af;
+}
+
+
+/* =========================================================
+   13. PAGINATION
+   ========================================================= */
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: var(--space-2);
+
+    margin-top: var(--space-8);
+}
+
+.pagination a,
+.pagination button {
+    min-width: 40px;
+    min-height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: var(--space-2);
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius-md);
+
+    color: var(--color-text-secondary);
+
+    font-size: var(--font-size-sm);
+}
+
+.pagination a:hover,
+.pagination button:hover,
+.pagination .is-active {
+    background: var(--color-secondary);
+
+    border-color: var(--color-secondary);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   14. EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+    padding: var(--space-12) var(--space-6);
+
+    background: var(--color-surface);
+
+    border: 1px dashed var(--color-border-dark);
+
+    border-radius: var(--radius-lg);
+
+    text-align: center;
+}
+
+.empty-state h2,
+.empty-state h3 {
+    margin-bottom: var(--space-3);
+
+    color: var(--color-primary);
+}
+
+.empty-state p {
+    margin-bottom: 0;
+
+    color: var(--color-text-secondary);
+}
+
+
+/* =========================================================
+   15. LOADING STATE
+   ========================================================= */
+
+.loading {
+    display: grid;
+    place-items: center;
+
+    min-height: 150px;
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-sm);
+}
+
+
+/* =========================================================
+   16. SEARCH RESULT HIGHLIGHT
+   ========================================================= */
+
+.is-hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   17. DARK MODE FOUNDATION
+   ========================================================= */
+
+[data-theme="dark"] {
+    --color-background: #020617;
+    --color-surface: #0f172a;
+    --color-surface-muted: #1e293b;
+
+    --color-text: #f8fafc;
+    --color-text-secondary: #cbd5e1;
+    --color-text-muted: #94a3b8;
+
+    --color-border: #334155;
+    --color-border-dark: #475569;
+}
+
+[data-theme="dark"] .site-header {
+    background: rgba(15, 23, 42, 0.96);
+}
+
+[data-theme="dark"] .navigation-menu {
+    background: var(--color-surface);
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+    background: var(--color-surface);
+    color: var(--color-text);
+}
+
+[data-theme="dark"] .button-secondary {
+    background: var(--color-surface);
+    color: var(--color-text);
+}

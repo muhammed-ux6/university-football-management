@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="View, register, and manage university football players, squads, positions, teams, and player information."
+    >
+
+    <title>Players | University Football Management</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <!-- JavaScript -->
+    <script src="../js/script.js" defer></script>
+</head>
+
+
+<body>
+
+    <!-- Skip Navigation -->
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+
+    <!-- Site Header -->
+   <header class="site-header">
+
+        <nav class="main-navigation" aria-label="Primary navigation">
+
+            <a class="site-logo" href="index.html" aria-label="University Football Management Home">
+                <img src="../images/img1.jpeg"
+                     alt="University Football Management logo">
+                <span>UFM</span>
+            </a>
+
+            <button class="navigation-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="primary-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+
+            <ul class="navigation-menu" id="primary-menu">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="competitions.html">Competitions</a>
+                </li>
+
+                <li>
+                    <a href="teams.html">Teams</a>
+                </li>
+
+                <li>
+                    <a href="players.html">Players</a>
+                </li>
+
+                <li>
+                    <a href="fixtures.html">Fixtures</a>
+                </li>
+
+                <li>
+                    <a href="results.html">Results</a>
+                </li>
+
+                <li>
+                    <a href="standings.html">Standings</a>
+                </li>
+
+                <li>
+                    <a href="news.html">News</a>
+                </li>
+            </ul>
+
+            <a class="navigation-cta" href="dashboard/index.html">
+                Manage Competition
+            </a>
+
+        </nav>
+
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+
+        <!-- Page Hero -->
+        <section class="page-hero players-hero">
+
+            <div class="page-hero-content">
+
+                <p class="hero-label">
+                    Player Management
+                </p>
+
+                <h1>
+                    University Football Players
+                </h1>
+
+                <p class="hero-description">
+                    Register, organize, and manage university football
+                    players and squad information from one centralized
+                    platform.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a
+                        class="button button-primary"
+                        href="#player-management"
+                    >
+                        Register Player
+                    </a>
+
+                    <a
+                        class="button button-secondary"
+                        href="#players-list"
+                    >
+                        View Players
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Player Statistics -->
+        <section
+            class="platform-overview"
+            aria-labelledby="player-overview-heading"
+        >
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    Overview
+                </p>
+
+                <h2 id="player-overview-heading">
+                    Player Overview
+                </h2>
+
+                <p>
+                    Monitor registered players and their participation
+                    across university football competitions.
+                </p>
+
+            </div>
+
+
+            <div class="overview-statistics">
+
+                <article class="statistic-card">
+
+                    <span class="statistic-label">
+                        Registered Players
+                    </span>
+
+                    <strong
+                        class="statistic-value"
+                        data-statistic="registered-players"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="statistic-card">
+
+                    <span class="statistic-label">
+                        Active Players
+                    </span>
+
+                    <strong
+                        class="statistic-value"
+                        data-statistic="active-players"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="statistic-card">
+
+                    <span class="statistic-label">
+                        Teams Represented
+                    </span>
+
+                    <strong
+                        class="statistic-value"
+                        data-statistic="player-teams"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="statistic-card">
+
+                    <span class="statistic-label">
+                        Competition Players
+                    </span>
+
+                    <strong
+                        class="statistic-value"
+                        data-statistic="competition-players"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Search and Filter -->
+        <section
+            class="competition-controls-section"
+            aria-labelledby="player-controls-heading"
+        >
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    Find Players
+                </p>
+
+                <h2 id="player-controls-heading">
+                    Search and Filter
+                </h2>
+
+                <p>
+                    Quickly find players by name, team, or playing position.
+                </p>
+
+            </div>
+
+
+            <div class="competition-controls">
+
+                <!-- Search -->
+                <div class="search-group">
+
+                    <label for="player-search">
+                        Search players
+                    </label>
+
+                    <input
+                        type="search"
+                        id="player-search"
+                        name="player-search"
+                        placeholder="Search by player name..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- Team Filter -->
+                <div class="filter-group">
+
+                    <label for="player-team">
+                        Team
+                    </label>
+
+                    <select
+                        id="player-team"
+                        name="player-team"
+                    >
+
+                        <option value="all">
+                            All Teams
+                        </option>
+
+                        <option value="computer-science">
+                            Computer Science FC
+                        </option>
+
+                        <option value="engineering">
+                            Engineering United
+                        </option>
+
+                        <option value="social-science">
+                            Social Sciences FC
+                        </option>
+
+                        <option value="arts">
+                            Arts United
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Position Filter -->
+                <div class="filter-group">
+
+                    <label for="player-position">
+                        Position
+                    </label>
+
+                    <select
+                        id="player-position"
+                        name="player-position"
+                    >
+
+                        <option value="all">
+                            All Positions
+                        </option>
+
+                        <option value="goalkeeper">
+                            Goalkeeper
+                        </option>
+
+                        <option value="defender">
+                            Defender
+                        </option>
+
+                        <option value="midfielder">
+                            Midfielder
+                        </option>
+
+                        <option value="forward">
+                            Forward
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Players List -->
+        <section
+            class="competitions-section"
+            id="players-list"
+            aria-labelledby="players-heading"
+        >
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    All Players
+                </p>
+
+                <h2 id="players-heading">
+                    Registered Football Players
+                </h2>
+
+                <p>
+                    Browse players registered with university football
+                    teams.
+                </p>
+
+            </div>
+
+
+            <!-- Dynamic Player Container -->
+            <div
+                class="competition-list"
+                id="player-list"
+            >
+
+
+                <!-- Player Card -->
+                <article
+                    class="competition-card"
+                    data-status="active"
+                    data-team="computer-science"
+                    data-position="forward"
+                >
+
+                    <header class="competition-card-header">
+
+                        <span class="competition-status">
+                            Active
+                        </span>
+
+                        <p class="competition-type">
+                            Left-back
+                        </p>
+
+                    </header>
+
+
+                    <h3>
+                        Muritala Muhammed
+                    </h3>
+
+                    <p>
+                        Defender player representing Computer Science FC
+                        in university football competitions.
+                    </p>
+
+
+                    <dl class="competition-information">
+
+                        <div>
+                            <dt>
+                                Team
+                            </dt>
+
+                            <dd>
+                                Computer Science FC
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Jersey
+                            </dt>
+
+                            <dd>
+                                3
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Matches
+                            </dt>
+
+                            <dd>
+                                8
+                            </dd>
+                        </div>
+
+                    </dl>
+
+
+                    <a
+                        href="#"
+                        class="competition-link"
+                        aria-label="View Ahmed Ibrahim"
+                    >
+                        View Player
+                    </a>
+
+                </article>
+
+
+                <!-- Player Card -->
+                <article
+                    class="competition-card"
+                    data-status="active"
+                    data-team="engineering"
+                    data-position="midfielder"
+                >
+
+                    <header class="competition-card-header">
+
+                        <span class="competition-status">
+                            Active
+                        </span>
+
+                        <p class="competition-type">
+                            Midfielder
+                        </p>
+
+                    </header>
+
+
+                    <h3>
+                        Daniel Okafor
+                    </h3>
+
+                    <p>
+                        Central midfielder representing Engineering United
+                        in university football competitions.
+                    </p>
+
+
+                    <dl class="competition-information">
+
+                        <div>
+                            <dt>
+                                Team
+                            </dt>
+
+                            <dd>
+                                Engineering United
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Jersey
+                            </dt>
+
+                            <dd>
+                                8
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Matches
+                            </dt>
+
+                            <dd>
+                                9
+                            </dd>
+                        </div>
+
+                    </dl>
+
+
+                    <a
+                        href="#"
+                        class="competition-link"
+                        aria-label="View Daniel Okafor"
+                    >
+                        View Player
+                    </a>
+
+                </article>
+
+
+                <!-- Player Card -->
+                <article
+                    class="competition-card"
+                    data-status="active"
+                    data-team="social-science"
+                    data-position="defender"
+                >
+
+                    <header class="competition-card-header">
+
+                        <span class="competition-status">
+                            Active
+                        </span>
+
+                        <p class="competition-type">
+                            Attacker
+                        </p>
+
+                    </header>
+
+
+                    <h3>
+                        Samuel Adeyemi
+                    </h3>
+
+                    <p>
+                        Attacker player representing Social Sciences FC
+                        in the university football competition.
+                    </p>
+
+
+                    <dl class="competition-information">
+
+                        <div>
+                            <dt>
+                                Team
+                            </dt>
+
+                            <dd>
+                                Social Sciences FC
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Jersey
+                            </dt>
+
+                            <dd>
+                                10
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Matches
+                            </dt>
+
+                            <dd>
+                                6
+                            </dd>
+                        </div>
+
+                    </dl>
+
+
+                    <a
+                        href="#"
+                        class="competition-link"
+                        aria-label="View Samuel Adeyemi"
+                    >
+                        View Player
+                    </a>
+
+                </article>
+
+
+                <!-- Player Card -->
+                <article
+                    class="competition-card"
+                    data-status="active"
+                    data-team="arts"
+                    data-position="goalkeeper"
+                >
+
+                    <header class="competition-card-header">
+
+                        <span class="competition-status">
+                            Active
+                        </span>
+
+                        <p class="competition-type">
+                            Goalkeeper
+                        </p>
+
+                    </header>
+
+
+                    <h3>
+                        Michael Joseph
+                    </h3>
+
+                    <p>
+                        Goalkeeper representing Arts United in university
+                        football competitions.
+                    </p>
+
+
+                    <dl class="competition-information">
+
+                        <div>
+                            <dt>
+                                Team
+                            </dt>
+
+                            <dd>
+                                Arts United
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Jersey
+                            </dt>
+
+                            <dd>
+                                1
+                            </dd>
+                        </div>
+
+
+                        <div>
+                            <dt>
+                                Matches
+                            </dt>
+
+                            <dd>
+                                5
+                            </dd>
+                        </div>
+
+                    </dl>
+
+
+                    <a
+                        href="#"
+                        class="competition-link"
+                        aria-label="View Michael Joseph"
+                    >
+                        View Player
+                    </a>
+
+                </article>
+
+            </div>
+
+
+            <!-- No Results Message -->
+            <p
+                class="no-results"
+                id="no-player-results"
+                hidden
+            >
+                No players match your search or filter selection.
+            </p>
+
+        </section>
+
+
+        <!-- Player Management -->
+        <section
+            class="competition-management-section"
+            id="player-management"
+            aria-labelledby="player-management-heading"
+        >
+
+            <div class="section-header">
+
+                <p class="section-label">
+                    Administration
+                </p>
+
+                <h2 id="player-management-heading">
+                    Manage Football Players
+                </h2>
+
+                <p>
+                    Tournament organizers can register and manage player
+                    information for university football teams.
+                </p>
+
+            </div>
+
+
+            <div class="management-options">
+
+                <article class="benefit-card">
+
+                    <h3>
+                        Register Player
+                    </h3>
+
+                    <p>
+                        Add a new football player and record their team,
+                        position, jersey number, and other information.
+                    </p>
+
+                    <button
+                        class="button button-primary"
+                        type="button"
+                        data-modal-target="register-player-modal"
+                    >
+                        Register Player
+                    </button>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <h3>
+                        Manage Teams
+                    </h3>
+
+                    <p>
+                        View registered teams and organize players within
+                        their respective football squads.
+                    </p>
+
+                    <a
+                        class="button button-secondary"
+                        href="teams.html"
+                    >
+                        Manage Teams
+                    </a>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <h3>
+                        View Competitions
+                    </h3>
+
+                    <p>
+                        Check the competitions where registered players
+                        and teams are participating.
+                    </p>
+
+                    <a
+                        class="button button-secondary"
+                        href="competitions.html"
+                    >
+                        View Competitions
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Final Call to Action -->
+        <section
+            class="final-cta"
+            aria-labelledby="player-final-cta-heading"
+        >
+
+            <h2 id="player-final-cta-heading">
+                Ready to Register Your Players?
+            </h2>
+
+            <p>
+                Keep university football player information organized
+                and accessible from one centralized platform.
+            </p>
+
+            <a
+                class="button button-primary"
+                href="#player-management"
+            >
+                Start Managing Players
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Register Player Modal -->
+    <div
+        class="modal"
+        id="register-player-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="register-player-title"
+        hidden
+    >
+
+        <div
+            class="modal-overlay"
+            data-modal-close
+        ></div>
+
+
+        <section class="modal-content">
+
+            <header class="modal-header">
+
+                <h2 id="register-player-title">
+                    Register Football Player
+                </h2>
+
+                <button
+                    class="modal-close"
+                    type="button"
+                    aria-label="Close modal"
+                    data-modal-close
+                >
+                    ×
+                </button>
+
+            </header>
+
+
+            <form
+                class="competition-form"
+                id="player-form"
+                novalidate
+            >
+
+                <div class="form-group">
+
+                    <label for="player-name">
+                        Player Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="player-name"
+                        name="player-name"
+                        required
+                        placeholder="Enter player name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="player-team-form">
+                        Team
+                    </label>
+
+                    <select
+                        id="player-team-form"
+                        name="player-team"
+                        required
+                    >
+
+                        <option value="">
+                            Select team
+                        </option>
+
+                        <option value="computer-science">
+                            Computer Science FC
+                        </option>
+
+                        <option value="engineering">
+                            Engineering United
+                        </option>
+
+                        <option value="social-science">
+                            Social Sciences FC
+                        </option>
+
+                        <option value="arts">
+                            Arts United
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="player-position-form">
+                        Position
+                    </label>
+
+                    <select
+                        id="player-position-form"
+                        name="player-position"
+                        required
+                    >
+
+                        <option value="">
+                            Select position
+                        </option>
+
+                        <option value="goalkeeper">
+                            Goalkeeper
+                        </option>
+
+                        <option value="defender">
+                            Defender
+                        </option>
+
+                        <option value="midfielder">
+                            Midfielder
+                        </option>
+
+                        <option value="forward">
+                            Forward
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="player-jersey">
+                        Jersey Number
+                    </label>
+
+                    <input
+                        type="number"
+                        id="player-jersey"
+                        name="player-jersey"
+                        min="1"
+                        max="99"
+                        required
+                        placeholder="Enter jersey number"
+                    >
+
+                </div>
+
+
+                <button
+                    class="button button-primary"
+                    type="submit"
+                >
+                    Register Player
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <a href="../index.html">
+
+                    <img
+                        src="../images/img1.jpeg"
+                        alt="University Football Management logo"
+                    >
+
+                    <span>
+                        University Football Management
+                    </span>
+
+                </a>
+
+                <p>
+                    A centralized platform for organizing, managing,
+                    and monitoring university football competitions.
+                </p>
+
+            </div>
+
+
+            <nav
+                class="footer-navigation"
+                aria-label="Footer navigation"
+            >
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="../index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="competitions.html">
+                            Competitions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="teams.html">
+                            Teams
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="players.html">
+                            Players
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="fixtures.html">
+                            Fixtures
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="result.html">
+                            Results
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="standings.html">
+                            Standings
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="news.html">
+                            News
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 University Football Management.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
