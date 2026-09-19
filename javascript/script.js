@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
        ===================================================== */
 
     const STORAGE_KEY = "ufm-data";
+    const API_BASE_URL = "/api";
     const THEME_KEY = "ufm-theme";
 
 
@@ -92,6 +93,80 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     let footballData = getData();
+
+    let apiAvailable = false;
+    let apiReadyPromise = Promise.resolve(false);
+
+    async function synchronizeWithApi() {
+        try {
+            const resources = Object.keys(defaultData);
+            const localData = footballData;
+            const responses = await Promise.all(
+                resources.map((resource) => fetch(`${API_BASE_URL}/${resource}`))
+            );
+
+            if (responses.some((response) => !response.ok)) return false;
+
+            const records = await Promise.all(
+                responses.map((response) => response.json())
+            );
+
+            const remoteData = Object.fromEntries(
+                resources.map((resource, index) => [resource, records[index]])
+            );
+            apiAvailable = true;
+
+            const remoteHasRecords = resources.some(
+                (resource) => remoteData[resource].length > 0
+            );
+            const localHasRecords = resources.some(
+                (resource) => localData[resource].length > 0
+            );
+
+            if (!remoteHasRecords && localHasRecords) {
+                await Promise.all(
+                    resources.flatMap((resource) =>
+                        localData[resource].map((record) =>
+                            fetch(`${API_BASE_URL}/${resource}`, {
+                                method: "POST",
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify(record)
+                            })
+                        )
+                    )
+                );
+                footballData = localData;
+            } else {
+                footballData = remoteData;
+            }
+
+            saveData(footballData);
+            updateDataCounts();
+            updateCompetitionStatistics();
+            return true;
+        } catch (error) {
+            console.info("Backend unavailable; using local browser data.");
+            return false;
+        }
+    }
+
+    async function createRemoteRecord(resource, record) {
+        await apiReadyPromise;
+
+        if (!apiAvailable) return record;
+
+        const response = await fetch(`${API_BASE_URL}/${resource}`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(record)
+        });
+
+        if (!response.ok) {
+            throw new Error(`Unable to save ${resource} on the server.`);
+        }
+
+        return response.json();
+    }
 
 
     /* =====================================================
@@ -674,7 +749,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!form || !competitionList) return;
 
-        form.addEventListener("submit", (event) => {
+        form.addEventListener("submit", async (event) => {
             event.preventDefault();
 
             const name =
@@ -711,9 +786,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 matches: 0
             };
 
-            footballData.competitions.push(
-                newCompetition
-            );
+            try {
+                const savedCompetition = await createRemoteRecord(
+                    "competitions",
+                    newCompetition
+                );
+                newCompetition.id = savedCompetition.id;
+                footballData.competitions.push(newCompetition);
+            } catch (error) {
+                console.error(error);
+                alert("The competition could not be saved.");
+                return;
+            }
 
             saveData(footballData);
 
@@ -1075,6 +1159,114 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    function initializeManagementForms() {
+        const formConfigurations = [
+            {
+                formId: "team-form",
+                resource: "teams",
+                fields: {
+                    name: "team-name",
+                    faculty: "team-faculty-form",
+                    captain: "team-captain"
+                },
+                defaults: { status: "registered", players: 0 }
+            },
+            {
+                formId: "player-form",
+                resource: "players",
+                fields: {
+                    name: "player-name",
+                    team: "player-team-form",
+                    position: "player-position-form",
+                    jersey: "player-jersey"
+                },
+                defaults: { status: "active" }
+            },
+            {
+                formId: "result-form",
+                resource: "results",
+                fields: {
+                    competition: "result-competition-form",
+                    homeTeam: "home-team",
+                    awayTeam: "away-team",
+                    homeScore: "home-score",
+                    awayScore: "away-score",
+                    date: "result-date",
+                    venue: "result-venue"
+                }
+            }
+        ];
+
+        formConfigurations.forEach((configuration) => {
+            const form = document.getElementById(configuration.formId);
+            if (!form) return;
+
+            form.addEventListener("submit", async (event) => {
+                event.preventDefault();
+
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                }
+
+                const getValue = (fieldName) => {
+                    const element = document.getElementById(
+                        configuration.fields[fieldName]
+                    );
+                    return element?.value.trim?.() || element?.value || "";
+                };
+
+                if (
+                    configuration.formId === "result-form" &&
+                    getValue("homeTeam") === getValue("awayTeam")
+                ) {
+                    alert("Home Team and Away Team cannot be the same.");
+                    return;
+                }
+
+                const record = {
+                    ...configuration.defaults,
+                    id: createId(configuration.resource.slice(0, -1)),
+                    ...Object.fromEntries(
+                        Object.keys(configuration.fields).map((fieldName) => [
+                            fieldName,
+                            getValue(fieldName)
+                        ])
+                    )
+                };
+
+                if (configuration.formId === "result-form") {
+                    record.homeScore = Number(record.homeScore);
+                    record.awayScore = Number(record.awayScore);
+                    record.status = record.homeScore === record.awayScore
+                        ? "draw"
+                        : record.homeScore > record.awayScore
+                            ? "home-win"
+                            : "away-win";
+                }
+
+                try {
+                    const savedRecord = await createRemoteRecord(
+                        configuration.resource,
+                        record
+                    );
+                    record.id = savedRecord.id;
+                    footballData[configuration.resource].push(record);
+                    saveData(footballData);
+                    form.reset();
+                    form.closest(".modal")?.setAttribute("hidden", "");
+                    updateDataCounts();
+                    updateCompetitionStatistics();
+                    alert("Record saved successfully.");
+                } catch (error) {
+                    console.error(error);
+                    alert("The record could not be saved.");
+                }
+            });
+        });
+    }
+
+
     /* =====================================================
        INITIALIZE ALL FEATURES
        ===================================================== */
@@ -1092,7 +1284,9 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeGeneralFilters();
     initializeCountdowns();
     initializeCalculator();
+    initializeManagementForms();
     updateCompetitionStatistics();
     updateDataCounts();
+    apiReadyPromise = synchronizeWithApi();
 
 });

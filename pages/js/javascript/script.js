@@ -140,6 +140,8 @@ document.addEventListener("DOMContentLoaded", () => {
        FOOTBALL DATA
        ===================================================== */
 
+    const API_BASE_URL = "/api";
+
     const defaultFootballData = {
 
         competitions: [],
@@ -227,6 +229,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let footballData =
         loadFootballData();
+
+    let apiAvailable = false;
+
+    const synchronizeWithApi = async () => {
+        try {
+            const resources = Object.keys(defaultFootballData);
+            const responses = await Promise.all(
+                resources.map(resource => fetch(`${API_BASE_URL}/${resource}`))
+            );
+
+            if (responses.some(response => !response.ok)) {
+                return;
+            }
+
+            const records = await Promise.all(
+                responses.map(response => response.json())
+            );
+
+            footballData = Object.fromEntries(
+                resources.map((resource, index) => [resource, records[index]])
+            );
+            apiAvailable = true;
+            localStorage.setItem("ufm-data", JSON.stringify(footballData));
+            updateStatistics();
+        } catch (error) {
+            console.info("Backend unavailable; using local browser data.");
+        }
+    };
 
 
     /* =====================================================
@@ -444,6 +474,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     updateStatistics();
+    synchronizeWithApi();
 
 
     /* =====================================================
@@ -777,7 +808,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         resultForm.addEventListener(
             "submit",
-            event => {
+            async event => {
 
                 event.preventDefault();
 
@@ -926,12 +957,29 @@ document.addEventListener("DOMContentLoaded", () => {
                 };
 
 
-                footballData.results.push(
-                    result
-                );
-
-
                 try {
+
+                    if (apiAvailable) {
+                        const response = await fetch(
+                            `${API_BASE_URL}/results`,
+                            {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json"
+                                },
+                                body: JSON.stringify(result)
+                            }
+                        );
+
+                        if (!response.ok) {
+                            throw new Error("Backend rejected the result.");
+                        }
+
+                        const savedResult = await response.json();
+                        result.id = savedResult.id;
+                    }
+
+                    footballData.results.push(result);
 
                     localStorage.setItem(
                         "ufm-data",
